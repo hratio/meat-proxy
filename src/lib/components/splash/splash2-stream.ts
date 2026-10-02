@@ -15,7 +15,8 @@ export function createSplash2Stream() {
   let generation = 0, playRequest = 0, cancelPrepare: (() => void) | undefined;
   let duration = 0, time = 0, volume = 1, lastLevel = -1;
   let ready = false, failed = false, disposed = false, playing = false;
-  let attempted = false, pending = false, driven = false, blocked = false, muted = false;
+  let attempted = false, pending = false, driven = false, blocked = false, muted = false, authorized = false;
+  let priming = false;
 
   function ramp(node: GainNode, value: number, seconds: number) {
     const now = getAudioContext().currentTime, gain = node.gain;
@@ -35,7 +36,7 @@ export function createSplash2Stream() {
     return graph;
   }
   function pause() {
-    playRequest++; pending = driven = false;
+    playRequest++; pending = driven = priming = false;
     if (media && !media.paused) media.pause();
   }
   function clearMedia() {
@@ -50,55 +51,75 @@ export function createSplash2Stream() {
     if (graph) ramp(graph.mute, muted ? 0 : 1, .08);
   }
   function envelope() {
-    if (!graph) return;
+    if (!graph || priming) return;
     const window = splash2AudioWindow(holdEnding ? { ...settings, end: 'clip' } : settings, duration, anchors);
     const attack = settings.fadeIn ? Math.max(0, Math.min(1, (time - settings.at) / settings.fadeIn)) : 1;
     const release = time < window.fadeAt ? 1 : window.end <= window.fadeAt ? 0 : Math.max(0, (window.end - time) / (window.end - window.fadeAt));
     const level = settings.volume * volume * attack * release;
     if (level !== lastLevel) { ramp(graph.level, level, .02); lastLevel = level; }
   }
-  function attempt() {
-    if (disposed || !playing || !ready || failed || !media) return;
+  function attempt(prime = false, interaction = false) {
+    if (disposed || failed || !media || (!prime && (!playing || !ready))) return;
     const window = splash2AudioWindow(holdEnding ? { ...settings, end: 'clip' } : settings, duration, anchors);
-    if (time < settings.at || time >= window.end) return;
+    if (!prime && (time < settings.at || time >= window.end)) return;
     const current = media, ctx = getAudioContext();
-    if (pending) {
-      // A gesture can arrive while an earlier autoplay resume is suspended.
-      if (ctx.state !== 'running') void ctx.resume().catch(() => {});
+    if (pending && (!interaction || !blocked)) {
+      if (interaction && ctx.state !== 'running') void ctx.resume().catch(() => {});
       return;
     }
+    if (prime && authorized && ctx.state === 'running') return;
     if (driven && !current.paused && ctx.state === 'running') return;
-    output(); envelope();
-    const target = (settings.offset + Math.max(0, time - settings.at)) / 1000;
+    priming = prime; output();
+    if (prime) { ramp(graph!.level, 0, 0); lastLevel = 0; }
+    else envelope();
+    const target = (settings.offset + (prime ? 0 : Math.max(0, time - settings.at))) / 1000;
     if (Math.abs(current.currentTime - target) > .01) current.currentTime = target;
-    attempted = pending = driven = true; blocked = false;
+    attempted = pending = true; driven = blocked = false;
     const request = ++playRequest;
-    // Native play can resolve before Web Audio has resumed. Await both so a
-    // Skip/unmute gesture cannot pause the recording again during that gap.
-    void Promise.all([ctx.resume(), Promise.resolve(current.play())]).then(() => {
-      if (disposed || media !== current || request !== playRequest) return;
-      pending = false;
-      if (ctx.state !== 'running') { blocked = true; driven = false; current.pause(); }
+    const currentRequest = () => !disposed && media === current && request === playRequest;
+    // Call both APIs inside the input handler when retrying. A suspended
+    // context's resume promise can remain pending until the next interaction.
+    const resumed = ctx.resume(), started = Promise.resolve(current.play());
+    void started.then(() => {
+      if (!currentRequest() || ctx.state === 'running') return;
+      blocked = true; current.pause();
+    }).catch(() => {});
+    void Promise.all([resumed, started]).then(() => {
+      if (!currentRequest()) return;
+      pending = priming = false;
+      if (ctx.state !== 'running') { blocked = true; current.pause(); return; }
+      authorized = true; blocked = false;
+      if (prime) {
+        // An early click can authorize this element while assets load. Keep
+        // that probe silent, then rewind before the intro is allowed to start.
+        current.pause(); current.currentTime = settings.offset / 1000;
+        attempted = false;
+      } else if (current.paused) attempt();
+      else driven = true;
     }).catch(error => {
-      if (disposed || media !== current || request !== playRequest) return;
-      pending = driven = false;
-      // Autoplay denial leaves the visual clock free to run. A later ordinary
-      // interaction joins the current playhead without replaying the intro.
+      if (!currentRequest()) return;
+      pending = driven = priming = false;
+      current.pause();
       if (error?.name === 'NotAllowedError') blocked = true;
       else if (error?.name !== 'AbortError') failed = true;
     });
   }
-  const unlock = () => attempt();
+  const unlock = () => attempt(!ready || !playing || time < settings.at, true);
+  const interact = (event: Event) => {
+    if (event instanceof KeyboardEvent && (event.repeat || event.ctrlKey || event.metaKey || event.altKey
+      || ['Tab', 'Escape', 'Shift', 'Control', 'Alt', 'Meta'].includes(event.key))) return;
+    unlock();
+  };
+  const interactions = ['pointerdown', 'pointerup', 'click', 'keydown'];
   if (typeof window !== 'undefined') {
-    window.addEventListener('pointerdown', unlock, true);
-    window.addEventListener('keydown', unlock, true);
+    for (const event of interactions) window.addEventListener(event, interact, true);
   }
 
   return {
     async prepare(next: Splash2Audio, sound = true): Promise<Prepared> {
       const request = ++generation;
       cancelPrepare?.(); clearMedia(); settings = next;
-      duration = 0; ready = failed = attempted = blocked = false;
+      duration = 0; ready = failed = attempted = blocked = authorized = false;
       if (disposed || !sound || !next.enabled) { ready = true; return { duration: 0, failed: false }; }
       const current = new Audio(); media = current;
       current.preload = 'auto'; current.crossOrigin = 'anonymous';
@@ -163,6 +184,16 @@ export function createSplash2Stream() {
       current.src = assetUrl(next.url); current.load();
       return prepared;
     },
+    /** Hold the opening clock until audible playback has actually started. */
+    canAdvance() {
+      if (!ready) return false;
+      if (failed || !media || muted || volume === 0 || settings.volume === 0 || media.ended) return true;
+      const window = splash2AudioWindow(holdEnding ? { ...settings, end: 'clip' } : settings, duration, anchors);
+      if (time >= window.end) return true;
+      if (time < settings.at) return authorized;
+      return driven && !pending && !blocked && getAudioContext().state === 'running';
+    },
+    needsGesture() { return blocked && !failed && !muted && volume > 0 && settings.volume > 0; },
     /** A skip needs its own buffered lead, not just readiness at the beginning. */
     canSeek(at: number) {
       if (!ready) return false;
@@ -188,7 +219,8 @@ export function createSplash2Stream() {
       if (!active) { if (wasPlaying) pause(); return; }
       if (!ready || failed || !media) return;
       const window = splash2AudioWindow(holdEnding ? { ...settings, end: 'clip' } : settings, duration, anchors);
-      if (at < settings.at || at >= window.end) { if (driven || pending) pause(); return; }
+      if (at < settings.at) { if (!authorized && !attempted) attempt(true); return; }
+      if (at >= window.end) { if (driven || pending) pause(); return; }
       const target = (settings.offset + at - settings.at) / 1000;
       if (driven && !media.seeking && Math.abs(media.currentTime - target) > .18) media.currentTime = target;
       if (!wasPlaying || !attempted) attempt();
@@ -206,8 +238,7 @@ export function createSplash2Stream() {
       if (disposed) return;
       disposed = true; generation++; cancelPrepare?.(); clearMedia();
       if (typeof window !== 'undefined') {
-        window.removeEventListener('pointerdown', unlock, true);
-        window.removeEventListener('keydown', unlock, true);
+        for (const event of interactions) window.removeEventListener(event, interact, true);
       }
       releaseAudio();
     }

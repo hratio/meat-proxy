@@ -1,16 +1,16 @@
 <script lang="ts">
   import { onMount, untrack } from 'svelte';
   import { prefersReducedMotion } from 'svelte/motion';
-  import { SkipForward, Volume2, VolumeX } from '@lucide/svelte';
+  import { Play, SkipForward, Volume2, VolumeX } from '@lucide/svelte';
   import { createSplash2Audio } from './splash2-audio';
   import SplashSubtitles from './SplashSubtitles.svelte';
   import { createSplash2Stream } from './splash2-stream';
   import { defaultSplash2Config, splash2Durations, splash2SkipTime, splash2AudioEnd, type Splash2Config } from './splash2-playback-config';
 
-  let { config = defaultSplash2Config, playing = false, paused = false, loop = false, time = $bindable(0), sceneTime = $bindable(0),
+  let { config = defaultSplash2Config, playing = false, started = $bindable(false), paused = false, loop = false, time = $bindable(0), sceneTime = $bindable(0),
     sound = true, volume = .18, preview = false, handoff = false, gameReady = false, reducedMotion, introduction = false, remember = true, startAtCue = false,
     canSkip = false, ondisable, onprepared, onloaded, onfinished }: {
-    config?: Splash2Config; playing?: boolean; paused?: boolean; loop?: boolean; time?: number; sceneTime?: number;
+    config?: Splash2Config; playing?: boolean; started?: boolean; paused?: boolean; loop?: boolean; time?: number; sceneTime?: number;
     sound?: boolean; volume?: number; preview?: boolean; handoff?: boolean; gameReady?: boolean; reducedMotion?: boolean;
     introduction?: boolean; remember?: boolean; startAtCue?: boolean;
     canSkip?: boolean; ondisable?: () => Promise<void>;
@@ -20,6 +20,7 @@
   } = $props();
   let player = $state.raw<ReturnType<typeof createSplash2Audio> | ReturnType<typeof createSplash2Stream>>();
   let ready = $state(false), muted = $state(false);
+  let needsGesture = $state(false);
   let seekReady = $state(false), returning = $state(false), savingPreference = $state(false), preferenceSaved = $state(false);
   let skipped = $state(false), skipEndsAt = $state<number>();
   let recordedView = false, finished = false;
@@ -34,7 +35,7 @@
   let anchors = $derived(preview ? { handoff: complete, game: complete + 300 } : { handoff: handoffAt, game: gameAt });
   let total = $derived(Math.max(skipEndsAt ?? 0, reduce ? complete + 100 : durations.cycle, splash2AudioEnd(introduction && skipEndsAt === undefined ? { ...config.audio, end: 'clip' } : config.audio, audioDuration, anchors)));
   let skipTo = $derived(splash2SkipTime(config));
-  let skipAvailable = $derived(ready && playing && !paused && !handoff && (preview || canSkip) && seekReady && time < skipTo && !reduce);
+  let skipAvailable = $derived(ready && started && playing && !paused && !handoff && (preview || canSkip) && seekReady && time < skipTo && !reduce);
   let progress = $derived(Math.min(1, Math.max(0, time / Math.max(1, complete))));
 
   $effect(() => {
@@ -56,7 +57,7 @@
   $effect(() => { player?.anchors(anchors); });
   $effect(() => { if (player && 'holdEnding' in player) player.holdEnding(introduction && skipEndsAt === undefined); });
   $effect(() => {
-    if (!playing || !ready || preview || !remember || recordedView) return;
+    if (!started || !playing || !ready || preview || !remember || recordedView) return;
     recordedView = true;
     try {
       const key = 'meat-proxy:intro-views';
@@ -112,8 +113,10 @@
       const now = performance.now();
       const delta = previous ? Math.max(0, now - previous) : 0; previous = now;
       // Streaming uses the native playhead, including its buffering pauses.
-      // Silent/autoplay-blocked playback and editor previews use elapsed time.
-      if (ready && playing && !paused) {
+      // Silent playback and editor previews use elapsed time. Browser-denied
+      // audio holds both clocks at the beginning until a gesture unlocks it.
+      if (ready && playing && !paused && (!('canAdvance' in current) || current.canAdvance())) {
+        started = true;
         const before = time;
         const audioTime = 'playhead' in current ? current.playhead() : undefined;
         if (audioTime !== undefined) time = Math.max(time, audioTime);
@@ -125,6 +128,7 @@
       if (!preview && time < previousTime) { handoffAt = gameAt = undefined; }
       previousTime = time;
       current.sync(time, ready && playing && !paused && time < total, sound ? volume : 0);
+      needsGesture = ready && playing && !paused && 'needsGesture' in current && current.needsGesture();
       seekReady = ready && (!('canSeek' in current) || current.canSeek(skipTo));
       if (startAtCue && !skipped) skipIntro();
       const audioEnd = sound ? splash2AudioEnd(config.audio, audioDuration, anchors) : 0;
@@ -138,11 +142,18 @@
   });
 </script>
 
-{#if ready && playing}
+{#if needsGesture}
+  <div class="opening-start">
+    <button class="start-intro" onclick={() => player?.unlock()}><Play size={20} fill="currentColor" /><span>Start intro</span></button>
+    <p>Click anywhere or press a key</p>
+  </div>
+{/if}
+
+{#if ready && started && playing}
   <SplashSubtitles {time} settings={config.subtitles} audio={config.audio} fixed={!preview} endTime={skipEndsAt ?? Infinity} />
 {/if}
 
-{#if preview || !handoff}
+{#if preview || (!handoff && started && !needsGesture)}
   <div class="opening-controls" class:preview>
     {#if !preview}
       <div class="opening-progress" role="progressbar" aria-label="Intro progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)}>
@@ -166,6 +177,10 @@
 {/if}
 
 <style>
+  .opening-start { position: fixed; inset: 0; z-index: 250; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: #11110f; color: #d5d2c4; font: 12px system-ui, sans-serif; }
+  .start-intro { display: flex; align-items: center; gap: 12px; padding: 16px 24px; border: 1px solid #b5a77c; border-radius: 4px; background: #252820; color: inherit; font: 600 16px system-ui, sans-serif; cursor: pointer; }
+  .start-intro:hover { background: #34382b; }
+  .opening-start p { margin: 0; color: #b8bbaa; }
   .opening-controls { position: fixed; right: 22px; bottom: 22px; z-index: 250; display: flex; flex-direction: column; align-items: stretch; gap: 10px; min-width: 150px; color: #d5d2c4; font: 11px system-ui, sans-serif; }
   .opening-controls.preview { position: absolute; right: 12px; bottom: 12px; }
   .opening-buttons { display: flex; justify-content: flex-end; gap: 10px; }

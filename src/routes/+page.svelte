@@ -204,7 +204,7 @@
   let splashComplete = $state(false), splashFailed = $state(false);
   let splashStarted = $state(false), startupVisible = $state(true), startupLeaving = $state(false);
   let splashImagesReady = $state(false), landscapeReady = $state(false), portraitReady = $state(false);
-  let splashAudioReady = $state(false), splashAudioFinished = $state(false), openingTime = $state(0), sceneTime = $state(0);
+  let splashAudioReady = $state(false), splashAudioFinished = $state(false), openingPlaying = $state(false), openingTime = $state(0), sceneTime = $state(0);
   const arenaPrepared = $derived.by(() => !!data && !!config && !!catalog && !!snapshot
     && (!gameEnabled || ((!(primaryRule && primaryGroup && secondaryRule && otherGroup) || portraitReady)
       && weaponModelsReady[0] === mainModel && weaponModelsReady[1] === secondaryModel)));
@@ -1741,12 +1741,12 @@
 
 <div class={['relative isolate min-h-dvh font-sans text-[length:var(--ui-font-size)] leading-[1.45]', !startup && 'bg-background']} style:--ui-font-size={`${config?.display.uiFontSize || defaults.display.uiFontSize}px`} style:--ui-label-size={`${config?.display.uiLabelSize || defaults.display.uiLabelSize}px`}>
 {#if showSplash && !startup && config && (!splashAudioFinished || startupVisible || startupLeaving || (landscapeActive && defaultSplash2Config.scene.enabled))}
-  <Splash2Playback config={defaultSplash2Config} playing={(splashPrepared || !startupVisible) && !loadingError && !splashFailed} bind:time={openingTime} bind:sceneTime
+  <Splash2Playback config={defaultSplash2Config} playing={(splashPrepared || !startupVisible) && !loadingError && !splashFailed} bind:started={openingPlaying} bind:time={openingTime} bind:sceneTime
     sound={config.gameplay.sound} volume={config.gameplay.volume} reducedMotion={reducedStartupMotion}
     handoff={!startupVisible} gameReady={!starting} canSkip={arenaPrepared} ondisable={disableSplash} onprepared={ready => splashAudioReady = ready} onfinished={() => splashAudioFinished = true} />
 {/if}
 {#if !startup?.onbackgroundchange}
-  <SceneBackdrop intro={landscapeVisible} departing={!startupVisible} prepared={splashPrepared && !loadingError}
+  <SceneBackdrop intro={landscapeVisible} departing={!startupVisible} prepared={openingPlaying && !loadingError}
     time={sceneTime} introReducedMotion={reducedStartupMotion} reducedMotion={!!config?.display.reducedMotion || prefersReducedMotion.current} {background}
     onintroend={() => landscapeActive = false} onstatus={status => landscapeReady = status !== 'loading'} />
 {/if}
@@ -1758,14 +1758,14 @@
       out:leaveSplash|global={{ reducedMotion: reducedStartupMotion }}
       onoutroend={finishStartup}>
       {#if splashStarted && showSplash && config}
-        <SplashScreen config={defaultSplash2Config} landscape={false} showArtwork={splashPrepared && !splashFailed} paused={!splashPrepared}
+        <SplashScreen config={defaultSplash2Config} landscape={false} showArtwork={openingPlaying && !splashFailed} paused={!openingPlaying}
           time={openingTime} externalClock
           reducedMotion={config.display.reducedMotion || undefined}
           onready={() => splashImagesReady = true}
           oncomplete={() => splashComplete = true}
           onerror={() => { splashFailed = true; splashComplete = true; }} />
       {/if}
-      {#if !data || !config || !catalog || !snapshot || (showSplash && !splashPrepared)}<div class="absolute inset-0 grid place-content-center bg-background font-sans text-sm text-muted-foreground" role="status">Loading audio…</div>{/if}
+      {#if !data || !config || !catalog || !snapshot || (showSplash && !openingPlaying)}<div class="absolute inset-0 grid place-content-center bg-background font-sans text-sm text-muted-foreground" role="status">Loading…</div>{/if}
     </main>
   {/if}
 {/if}
