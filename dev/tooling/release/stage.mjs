@@ -30,10 +30,10 @@ async function stagePackage({ cwd, env, nextRelease, logger }) {
   // Stage the already-tested tarball. Never run npm publish or npm stage approve here.
   const receipt = npm(['stage', 'publish', join(directory, pack.filename), '--access', 'public', '--tag', 'latest', '--ignore-scripts', '--json']);
   await writeFile(join(directory, 'staging.json'), receipt);
-  logger.log('Staged meat-proxy@%s. Review it on npm and approve it with 2FA when ready.', nextRelease.version);
-  if (env.GITHUB_STEP_SUMMARY) await appendFile(env.GITHUB_STEP_SUMMARY, `\nStaged **meat-proxy@${nextRelease.version}** from \`${nextRelease.gitTag}\`. Review the staging receipt and tarball in this run's release artifact. The version becomes public on npm only after your 2FA approval.\n`);
+  logger.log('Staged %s@%s. Review it on npm and approve it with 2FA when ready.', pack.name, nextRelease.version);
+  if (env.GITHUB_STEP_SUMMARY) await appendFile(env.GITHUB_STEP_SUMMARY, `\nStaged **${pack.name}@${nextRelease.version}** from \`${nextRelease.gitTag}\`. Review the staging receipt and tarball in this run's release artifact. The version becomes public on npm only after your 2FA approval.\n`);
 }
 
 export function publish() {
-  return { name: 'npm staging (approval required)', url: 'https://www.npmjs.com/package/meat-proxy' };
+  return { name: 'npm staging (approval required)', url: 'https://www.npmjs.com/package/@hratioed/meat-proxy' };
 }

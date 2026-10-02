@@ -83,11 +83,11 @@
           "sprayMode": "inward",
           "sprayDelayMs": 50,
           "sprayTransitionMs": 1000,
-          "sprayAngleDeg": 90,
+          "sprayAngleDeg": -20,
           "sprayMinAngleDeg": -30,
           "sprayMaxAngleDeg": 30,
           "sprayPeriodMs": 500,
-          "sprayRecoilMultiplier": 0.3,
+          "sprayRecoilMultiplier": 0.1,
           "gloveGlowOnFire": true,
           "effect": "ballistic",
           "chargeMs": 1200,
@@ -116,8 +116,8 @@
           "sprayRoll": true,
           "sprayMode": "inward",
           "sprayDelayMs": 50,
-          "sprayTransitionMs": 200,
-          "sprayAngleDeg": 90,
+          "sprayTransitionMs": 400,
+          "sprayAngleDeg": 67,
           "sprayMinAngleDeg": -30,
           "sprayMaxAngleDeg": 30,
           "sprayPeriodMs": 500,
@@ -185,7 +185,7 @@
           "sprayMode": "inward",
           "sprayDelayMs": 50,
           "sprayTransitionMs": 1000,
-          "sprayAngleDeg": 90,
+          "sprayAngleDeg": -15,
           "sprayMinAngleDeg": -30,
           "sprayMaxAngleDeg": 30,
           "sprayPeriodMs": 500,
@@ -212,7 +212,7 @@
           }
         },
         "brrrt-10": {
-          "scale": 0.5,
+          "scale": 0.67,
           "recoilScale": 1,
           "barrelRecoilScale": 1,
           "sprayRoll": true,
@@ -247,7 +247,7 @@
           }
         },
         "heavenfire-67": {
-          "scale": 0.5,
+          "scale": 0.67,
           "recoilScale": 1,
           "barrelRecoilScale": 1,
           "sprayRoll": true,
@@ -255,8 +255,8 @@
           "sprayDelayMs": 50,
           "sprayTransitionMs": 200,
           "sprayAngleDeg": 90,
-          "sprayMinAngleDeg": -30,
-          "sprayMaxAngleDeg": 30,
+          "sprayMinAngleDeg": -15,
+          "sprayMaxAngleDeg": 15,
           "sprayPeriodMs": 3000,
           "sprayRecoilMultiplier": 0.3,
           "gloveGlowOnFire": true,
@@ -313,14 +313,14 @@
           }
         },
         "merge-obliterator": {
-          "scale": 1,
+          "scale": 1.2,
           "recoilScale": 1,
           "barrelRecoilScale": 1,
           "sprayRoll": true,
           "sprayMode": "inward",
           "sprayDelayMs": 50,
           "sprayTransitionMs": 1000,
-          "sprayAngleDeg": 90,
+          "sprayAngleDeg": -20,
           "sprayMinAngleDeg": -30,
           "sprayMaxAngleDeg": 30,
           "sprayPeriodMs": 500,
@@ -330,7 +330,7 @@
           "chargeMs": 1200,
           "chargeSize": 3,
           "fireIntervalMs": 480,
-          "destructionRadiusPx": 36,
+          "destructionRadiusPx": 66,
           "muzzleScale": 1.6,
           "sound": {
             "shot": "/audio/library/merge-obliterator/shot.ogg",
@@ -345,7 +345,7 @@
           }
         },
         "auto-bmg": {
-          "scale": 1,
+          "scale": 0.7,
           "recoilScale": 3,
           "barrelRecoilScale": 1,
           "sprayRoll": false,
@@ -361,7 +361,7 @@
           "effect": "ballistic",
           "chargeMs": 1200,
           "chargeSize": 3,
-          "fireIntervalMs": 550,
+          "fireIntervalMs": 444,
           "destructionRadiusPx": 48,
           "muzzleScale": 3,
           "sound": {
@@ -377,7 +377,7 @@
           }
         },
         "slopdisk": {
-          "scale": 1,
+          "scale": 0.75,
           "recoilScale": 0.55,
           "barrelRecoilScale": 1,
           "sprayRoll": false,
@@ -409,7 +409,7 @@
           }
         },
         "flaky-assertions": {
-          "scale": 0.68,
+          "scale": 0.38,
           "recoilScale": 0.2,
           "barrelRecoilScale": 3,
           "sprayRoll": true,
@@ -470,7 +470,8 @@
         },
         "environmentIntensity": 0.28,
         "environmentRotation": 117
-      }
+      },
+      "scale": 0.8
     },
     "display": {
       "wideMode": true,

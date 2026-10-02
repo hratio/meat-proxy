@@ -39,7 +39,7 @@ export async function smokePackage(tarball) {
   });
   checkContents(paths);
   const manifest = JSON.parse(execFileSync('tar', ['-xOf', tarball, 'package/package.json'], { encoding: 'utf8' }));
-  assert.equal(manifest.name, 'meat-proxy');
+  assert.equal(manifest.name, '@hratioed/meat-proxy');
   assert.equal(manifest.repository.url, 'git+https://github.com/hratio/meat-proxy.git');
   const directory = await mkdtemp(join(tmpdir(), 'meat-proxy-package-'));
   let server, exited;
@@ -51,7 +51,7 @@ export async function smokePackage(tarball) {
     await mkdir(repository);
     await writeFile(join(install, 'package.json'), '{"private":true}\n');
     npm(['install', '--prefix', install, '--omit=dev', '--ignore-scripts', '--no-audit', '--no-fund', '--package-lock=false', tarball], { stdio: 'inherit' });
-    const installed = join(install, 'node_modules/meat-proxy');
+    const installed = join(install, 'node_modules', manifest.name);
     const cli = join(install, 'node_modules/.bin/meat-proxy');
     const env = Object.fromEntries(Object.entries(process.env).filter(([key]) => !key.startsWith('MEAT_PROXY_')));
     env.XDG_CONFIG_HOME = join(directory, 'config');
