@@ -21,7 +21,7 @@
   let preferences = $state<Awaited<ReturnType<typeof readStartupPreferences>>>();
   let imagesReady = $state(false), sceneReady = $state(false);
   let audioReady = $state(false), audioFinished = $state(false), openingTime = $state(0), sceneTime = $state(0), gamePlayable = $state(false);
-  let playing = $state(false), assembled = $state(false), completed = $state(false);
+  let playing = $state(false), started = $state(false), assembled = $state(false), completed = $state(false);
   let reviewReady = $state(false), visible = $state(true), leaving = $state(false);
   let sceneVisible = $state(true), error = $state('');
   let disableIntro = $state<() => Promise<void>>();
@@ -85,8 +85,8 @@
     return () => cancelAnimationFrame(frame);
   });
 
-  // Give the opening scene/audio a paint before downloading the arena. The
-  // title can arrive much later; its assembly must not delay background loading.
+  // Give the prepared scene a paint before downloading the arena and title.
+  // These downloads also run while playback waits for a browser gesture.
   $effect(() => {
     if (!playing) return;
     let frame = requestAnimationFrame(() => {
@@ -119,13 +119,13 @@
 </svelte:head>
 
 {#if showSplash && (!audioFinished || visible || leaving || (sceneVisible && opening.scene.enabled))}
-  <Splash2Playback bind:this={playback} config={opening} {introduction} remember={false} startAtCue={preview} playing={playing && !error} paused={waitingForArtwork} bind:time={openingTime} bind:sceneTime sound={preferences?.sound} volume={preferences?.volume}
+  <Splash2Playback bind:this={playback} config={opening} {introduction} remember={false} startAtCue={preview} playing={playing && !error} bind:started paused={waitingForArtwork} bind:time={openingTime} bind:sceneTime sound={preferences?.sound} volume={preferences?.volume}
     reducedMotion={reduced} handoff={!visible} gameReady={gamePlayable} canSkip={reviewReady && imagesReady} ondisable={disableIntro}
     onprepared={ready => audioReady = ready} onfinished={() => audioFinished = true} />
 {/if}
 
 <SceneBackdrop intro={showSplash && sceneVisible && opening.scene.enabled} departing={!visible}
-  introSettings={opening.scene} prepared={playing} time={sceneTime} reducedMotion={reduced} {background}
+  introSettings={opening.scene} prepared={started} time={sceneTime} reducedMotion={reduced} {background}
   onintroend={() => sceneVisible = false} onstatus={status => sceneReady = status !== 'loading'} />
 
 <div class="introduction-status" data-introduction={introduction ? introductionPhase : 'disabled'} hidden></div>
@@ -138,15 +138,15 @@
 {/if}
 
 {#if visible}
-  <main class="startup-screen" data-phase={!playing ? 'loading' : assembled ? 'hold' : 'intro'}
+  <main class="startup-screen" data-phase={!started ? 'loading' : assembled ? 'hold' : 'intro'}
     aria-label="Starting Meat Proxy" aria-busy="true" out:leaveSplash|global={{ reducedMotion: reduced, introduction: opening.introduction }}
     onoutroend={() => leaving = false}>
     {#if showSplash && Artwork}
-      <Artwork config={opening} landscape={false} paused={!playing || waitingForArtwork} showArtwork={playing} time={openingTime} externalClock reducedMotion={reduced}
+      <Artwork config={opening} landscape={false} paused={!started || waitingForArtwork} showArtwork={started} time={openingTime} externalClock reducedMotion={reduced}
         onready={() => imagesReady = true} onassembled={landed} oncomplete={() => completed = true}
         onerror={cause => error = cause.message} />
     {/if}
-    {#if !playing || error}
+    {#if !started || error}
       <div class="startup-loader" role="status">
         <span></span><p>{error || 'Loading…'}</p>
         {#if error}<button onclick={() => location.reload()}>Try again</button>{/if}
