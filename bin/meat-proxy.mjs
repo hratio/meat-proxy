@@ -26,7 +26,7 @@ function openBrowser(url) {
 }
 
 if (args.includes('--help') || args.includes('-h')) {
-  console.log(`\n${name} — RIP & REVIEW\n\n  npx meat-proxy [--dir path] [--port 6660] [--no-open]\n\n  --dir       Review this Git repository (default: current directory)\n  --port      Local port (or MEAT_PROXY_PORT / config.toml)\n  --config    Path to a TOML configuration\n  --data-dir  Path to review storage\n  --no-open   Do not open a browser\n  --version   Show package version\n\n  Name: MEAT_PROXY_NAME in the working directory's .env\n  Config: ~/.config/meat-proxy/config.toml\n  Agent skill: ${join(packageRoot, 'skills/review-agent/SKILL.md')}\n`);
+  console.log(`\n${name} — RIP & REVIEW\n\n  npx @hratioed/meat-proxy [--dir path] [--port 6660] [--no-open]\n\n  --dir       Review this Git repository (default: current directory)\n  --port      Local port (or MEAT_PROXY_PORT / config.toml)\n  --config    Path to a TOML configuration\n  --data-dir  Path to review storage\n  --no-open   Do not open a browser\n  --version   Show package version\n\n  Name: MEAT_PROXY_NAME in the working directory's .env\n  Config: ~/.config/meat-proxy/config.toml\n  Agent skill: ${join(packageRoot, 'skills/review-agent/SKILL.md')}\n`);
   process.exit(0);
 }
 if (args.includes('--version')) { console.log(JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8')).version); process.exit(0); }

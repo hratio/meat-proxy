@@ -34,7 +34,7 @@
           "description": "Keep README content focused on purpose, setup, and lasting guidance. Lists of current tests, callers, or signatures drift out of date; generate them if needed.",
           "severity": "info",
           "image": 2,
-          "weapon": 1,
+          "weapon": 9,
           "bad": "## Current tests\n\n- users.test.ts covers create, update, and delete.\n- retry.test.ts covers retry delays and timeouts.\n\n## Callers\n\n- api.ts calls createUser.\n- jobs.ts calls deleteUser.",
           "good": "## Testing retries\n\nUse a fake clock to advance retry delays without waiting.\nRestore the clock after each test to keep tests isolated."
         },

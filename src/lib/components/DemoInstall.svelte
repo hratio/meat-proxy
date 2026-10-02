@@ -8,7 +8,7 @@
   let { ready, destroyed = false, reducedMotion = false, pulseMs = 3600 }: {
     ready: boolean; destroyed?: boolean; reducedMotion?: boolean; pulseMs?: number;
   } = $props();
-  const command = 'npx meat-proxy';
+  const command = 'npx @hratioed/meat-proxy';
   const id = $props.id();
   const reduced = $derived(reducedMotion || prefersReducedMotion.current);
   let armed = $state(false), revealed = $state(false);

@@ -1,5 +1,5 @@
 {
-  "name": "meat-proxy",
+  "name": "@hratioed/meat-proxy",
   "version": "0.1.0",
   "description": "Rip and review. A local-first code review arena.",
   "type": "module",
