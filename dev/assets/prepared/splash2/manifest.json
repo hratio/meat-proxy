@@ -1,0 +1,219 @@
+{
+  "format": "meat-proxy/splash2-color-bake",
+  "quality": 60,
+  "alphaQuality": 100,
+  "colors": {
+    "background": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonLeft": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonRight": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "firstRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "secondRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "mainFrame": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "logo": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "subtitleText": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "lgtm": {
+      "temperature": 24,
+      "amberReduction": 30,
+      "warmShift": 26,
+      "warmHue": 350,
+      "shadowBlue": 29,
+      "saturation": -7,
+      "exposure": 0.3,
+      "contrast": 4
+    },
+    "dude": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -2,
+      "exposure": 0.26,
+      "contrast": 11
+    }
+  },
+  "assets": [
+    {
+      "name": "background",
+      "layer": "background",
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "74905d86082daeee53568f59e614fa4b41c322979758e18f47c79fd6c49a0e79",
+      "pngBytes": 2627534,
+      "webpBytes": 207366,
+      "sourcePngSha256": "613c9c8eef0002e0ed41e693a3a5cb274afec23710de75d30093f7b0527ab6f3"
+    },
+    {
+      "name": "pylon-left",
+      "layer": "pylonLeft",
+      "width": 1254,
+      "height": 1254,
+      "sourceSha256": "942905b579b0aa43ef5374cd307b1acf40c241ef84442b53b4aa6c4cee28d3a9",
+      "pngBytes": 1079184,
+      "webpBytes": 67960,
+      "sourcePngSha256": "6e82020fe905536beb5e2698f9b6ae37767933b856f8f9a4d1d8991873884c95"
+    },
+    {
+      "name": "pylon-right",
+      "layer": "pylonRight",
+      "width": 1254,
+      "height": 1254,
+      "sourceSha256": "4bd09a94f1585a71b9489cd19e20dc6c473d5d6de51b0efb36c6f6dbfa2628f0",
+      "pngBytes": 1167647,
+      "webpBytes": 77384,
+      "sourcePngSha256": "8a967d7bb58919f2246e7865b01255d2b34f67b9a85aa0028b40944123e1d03b"
+    },
+    {
+      "name": "first-ring",
+      "layer": "firstRing",
+      "width": 1448,
+      "height": 1086,
+      "sourceSha256": "95b763f8779a6e277e4c84577c0f044dfc2440754d1669c97c96ed5d7e169246",
+      "pngBytes": 1199964,
+      "webpBytes": 105814,
+      "sourcePngSha256": "12863baf90a9c72422af3def2ced610a1eda95e82087b5c8d87478f08a56ce71"
+    },
+    {
+      "name": "second-ring",
+      "layer": "secondRing",
+      "width": 1448,
+      "height": 1086,
+      "sourceSha256": "2f2f1ee8e22a8d467b2d60370b0333684b16d182ef9c2d6664a433089f1a2cb6",
+      "pngBytes": 1157064,
+      "webpBytes": 102288,
+      "sourcePngSha256": "5ad2919c1da763d94fc455d6e4d8e6b59920440bddc2005a27be8b1990d324dd"
+    },
+    {
+      "name": "main-frame",
+      "layer": "mainFrame",
+      "width": 2172,
+      "height": 724,
+      "sourceSha256": "3ccfc2d7de13dc1e1fcaed529e8d839e88e0104d15f8b6bd2cbe369dd6d3a346",
+      "pngBytes": 1137704,
+      "webpBytes": 90788,
+      "sourcePngSha256": "79119d397300e092a85454b0162b1477ef278f0168d8d747ac459d645052d319"
+    },
+    {
+      "name": "meat-proxy",
+      "layer": "logo",
+      "width": 2172,
+      "height": 724,
+      "sourceSha256": "a2717b0a486ec286f28b10c7e42b4b0d122730baa18c6f6b43865c59eed120de",
+      "pngBytes": 1356409,
+      "webpBytes": 139158,
+      "sourcePngSha256": "a337cda4948d492d26eb5ffff25e642afeb213192d0db0779096a9a04d5f0545"
+    },
+    {
+      "name": "subtitle-text",
+      "layer": "subtitleText",
+      "width": 1672,
+      "height": 941,
+      "sourceSha256": "6adc186a71d9a937303783cadefc433f428ad8e8efdaaf4926f00c01e81d4232",
+      "pngBytes": 664612,
+      "webpBytes": 90464,
+      "sourcePngSha256": "8539022a73b76937a4963b4d25d181a0365c701a59bcb8167cb119b26da0a684"
+    },
+    {
+      "name": "lgtm",
+      "layer": "lgtm",
+      "width": 1930,
+      "height": 815,
+      "sourceSha256": "b51beaac74a6b8220341b1d963e3d74bf431fa47112c093d0b3337a45674d18e",
+      "pngBytes": 2791319,
+      "webpBytes": 326290,
+      "sourcePngSha256": "4ccb5aa1b61714566d0f9f1e165f7247eabaed8fac3825f89466a64405e22cf7"
+    },
+    {
+      "name": "dude-1",
+      "layer": "dude",
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "e0077f44a574e44dfdaba358762764275137efb497115ac2c0b6064f695ad9d7",
+      "pngBytes": 3082976,
+      "webpBytes": 235364,
+      "sourcePngSha256": "6388a986bc65e35e755cb5b2cd4fd3e79237747e021dcf00334faf7a8699beb3"
+    },
+    {
+      "name": "dude-2",
+      "layer": "dude",
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "4897296475c405346f35a6efd370ca0e92348e66727632558503033bc3955e8e",
+      "pngBytes": 3146334,
+      "webpBytes": 240588,
+      "sourcePngSha256": "fbdaebd29595445e12f8ee586220d9c9ba00497eae2221110113ca9ba70fa852"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "default": [],
+      "maxItems": 64,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "enabled": {
+            "default": true,
+            "type": "boolean"
+          },
+          "events": {
+            "minItems": 1,
+            "maxItems": 9,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "background-shot",
+                "weapon-shot",
+                "destruction-file-start",
+                "destruction-all-start",
+                "file-complete",
+                "review-complete",
+                "color-unlock-start",
+                "color-unlock-cancel",
+                "color-unlock-success"
+              ]
+            }
+          },
+          "weapons": {
+            "default": [],
+            "maxItems": 64,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "voice": {
+            "description": "Omit for no voice. Choose a random category or one specific clip from the voice library.",
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,63}$"
+                  }
+                },
+                "required": [
+                  "category"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "clip": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]{0,63}$"
+                  }
+                },
+                "required": [
+                  "clip"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "hud": {
+            "type": "object",
+            "properties": {
+              "expression": {
+                "type": "string",
+                "enum": [
+                  "Idle",
+                  "Clench",
+                  "Shout",
+                  "ShadesPeek",
+                  "Grin",
+                  "Surprise"
+                ]
+              },
+              "durationMs": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 600000
+              },
+              "finishCycle": {
+                "default": true,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "expression"
+            ]
+          },
+          "transmission": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "default": "INCOMING TRANSMISSION",
+                "type": "string",
+                "maxLength": 80
+              },
+              "text": {
+                "default": "",
+                "description": "Message text. Leave blank to use the selected voice clip transcript.",
+                "type": "string",
+                "maxLength": 1200
+              },
+              "expression": {
+                "default": "ShadesPeek",
+                "type": "string",
+                "enum": [
+                  "Idle",
+                  "Clench",
+                  "Shout",
+                  "ShadesPeek",
+                  "Grin",
+                  "Surprise"
+                ]
+              },
+              "splash": {
+                "default": "signal",
+                "type": "string",
+                "enum": [
+                  "signal",
+                  "impact"
+                ]
+              },
+              "durationSec": {
+                "description": "Reading time for a silent message; otherwise calculated from its text.",
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 600
+              },
+              "movement": {
+                "type": "boolean"
+              },
+              "introSeconds": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "outroSeconds": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 5
+              }
+            }
+          },
+          "interrupt": {
+            "default": false,
+            "type": "boolean"
+          },
+          "incrementChance": {
+            "default": 1,
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "minCount": {
+            "default": 1,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "maxCount": {
+            "default": 1,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "cooldownMs": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 600000
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "events"
+        ]
+      }
+    }
+  }
+}

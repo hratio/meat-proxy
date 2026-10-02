@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "name": "Example review rules",
+  "destructionMark": "V011",
+  "groups": [
+    {
+      "id": "design",
+      "name": "Design",
+      "color": "#ed793e",
+      "codes": [
+        {
+          "id": "V001",
+          "title": "Hard-coded policy",
+          "description": "Let callers choose settings such as retry limits and timeouts. Keep fixed algorithm or protocol requirements inside the implementation.",
+          "severity": "warning",
+          "image": 0,
+          "weapon": 3,
+          "bad": "const createRetrier = () =>\n  new Retrier({ delayMs: 1_000, limit: 3 });",
+          "good": "type RetryPolicy = { delayMs: number; limit: number };\n\nconst createRetrier = (policy: RetryPolicy) =>\n  new Retrier(policy);\n\ncreateRetrier({ delayMs: 500, limit: 5 });"
+        },
+        {
+          "id": "V002",
+          "title": "Compatibility for unreleased code",
+          "description": "Avoid migrations and fallback logic for formats that never shipped. Update the contract directly unless an existing release needs compatibility.",
+          "severity": "warning",
+          "image": 1,
+          "weapon": 2,
+          "bad": "// This field was added in the same unreleased change.\ntype RecordData = { mode?: \"fast\" | \"safe\" };\n\nconst getMode = (record: RecordData) => record.mode ?? \"safe\";",
+          "good": "type RecordData = { mode: \"fast\" | \"safe\" };\n\nconst getMode = (record: RecordData) => record.mode;"
+        },
+        {
+          "id": "V003",
+          "title": "README inventories",
+          "description": "Keep README content focused on purpose, setup, and lasting guidance. Lists of current tests, callers, or signatures drift out of date; generate them if needed.",
+          "severity": "info",
+          "image": 2,
+          "weapon": 1,
+          "bad": "## Current tests\n\n- users.test.ts covers create, update, and delete.\n- retry.test.ts covers retry delays and timeouts.\n\n## Callers\n\n- api.ts calls createUser.\n- jobs.ts calls deleteUser.",
+          "good": "## Testing retries\n\nUse a fake clock to advance retry delays without waiting.\nRestore the clock after each test to keep tests isolated."
+        },
+        {
+          "id": "V011",
+          "title": "Rewrite this file",
+          "description": "Rewrite this file with a clear, maintainable implementation. Preserve its required behavior and public API, and verify the replacement with behavior tests.",
+          "severity": "warning",
+          "image": 10,
+          "weapon": 10,
+          "bad": "// Keep patching an implementation whose structure no longer fits its responsibilities.",
+          "good": "// Replace the implementation with a simpler design while preserving the public contract."
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "name": "Types",
+      "color": "#94a8ce",
+      "codes": [
+        {
+          "id": "V004",
+          "title": "Invalid state combinations",
+          "description": "Use a union or one optional object when fields depend on each other. Separate optional fields should only represent values that can be absent independently.",
+          "severity": "warning",
+          "image": 3,
+          "weapon": 4,
+          "bad": "type LoadState = {\n  status: \"loaded\" | \"failed\";\n  data?: string;\n  error?: string;\n};\n\n// Allowed, even though loaded data is missing.\nconst state: LoadState = { status: \"loaded\" };",
+          "good": "type LoadState =\n  | { status: \"loaded\"; data: string }\n  | { status: \"failed\"; error: string };\n\nconst state: LoadState = {\n  status: \"loaded\",\n  data: \"Hello\",\n};"
+        },
+        {
+          "id": "V005",
+          "title": "Raw SQL bypasses type checks",
+          "description": "Use the typed query builder for operations it supports. Reserve raw SQL for capabilities the builder cannot express; a result type alone does not check SQL names or expressions.",
+          "severity": "warning",
+          "image": 4,
+          "weapon": 5,
+          "bad": "db.selectFrom(\"account\")\n  .select(sql<string>`emali`.as(\"email\")); // Typo goes unchecked.",
+          "good": "db.selectFrom(\"account\")\n  .select(\"email\"); // Column names are checked."
+        },
+        {
+          "id": "V006",
+          "title": "Required work made optional",
+          "description": "Require data and callbacks an operation needs to succeed. Optional fields, defaults, and guards should not silently skip required work.",
+          "severity": "warning",
+          "image": 5,
+          "weapon": 6,
+          "bad": "type TaskDependencies = {\n  releaseResources?: () => void;\n};\n\n// Every completed task must release its resources.\nfunction completeTask(deps: TaskDependencies) {\n  deps.releaseResources?.();\n  markTaskComplete();\n}",
+          "good": "type TaskDependencies = {\n  releaseResources: () => void;\n};\n\nfunction completeTask(deps: TaskDependencies) {\n  deps.releaseResources();\n  markTaskComplete();\n}"
+        },
+        {
+          "id": "V007",
+          "title": "Aliases that add no safety",
+          "description": "A plain alias does not distinguish one string or number from another. Use the primitive directly when that is enough; otherwise use a branded type or a distinct structure.",
+          "severity": "warning",
+          "image": 6,
+          "weapon": 7,
+          "bad": "type UserId = string;\ntype OrderId = string;\n\nconst loadUser = (id: UserId) => users.get(id);\nconst orderId: OrderId = \"order-123\";\n\nloadUser(orderId); // Accepted: both IDs are strings.",
+          "good": "type UserId = { kind: \"user\"; value: string };\ntype OrderId = { kind: \"order\"; value: string };\n\nconst loadUser = (id: UserId) => users.get(id.value);\nconst orderId: OrderId = { kind: \"order\", value: \"123\" };\n\nloadUser({ kind: \"user\", value: \"123\" });\n// loadUser(orderId); // Rejected: an order ID is not a user ID."
+        },
+        {
+          "id": "V008",
+          "title": "Discarded type information",
+          "description": "Keep known types instead of widening values to unknown and rebuilding their shape with checks. Use unknown at untyped or untrusted boundaries.",
+          "severity": "warning",
+          "image": 7,
+          "weapon": 8,
+          "bad": "// The caller already supplies a Failure value.\nfunction failureMessage(failure: unknown) {\n  if (\n    typeof failure === \"object\" &&\n    failure !== null &&\n    \"kind\" in failure &&\n    failure.kind === \"timeout\"\n  ) {\n    return \"Timed out\";\n  }\n  return \"Cancelled\";\n}",
+          "good": "type Failure = { kind: \"timeout\" } | { kind: \"cancelled\" };\n\nfunction failureMessage(failure: Failure) {\n  return failure.kind === \"timeout\" ? \"Timed out\" : \"Cancelled\";\n}"
+        },
+        {
+          "id": "V009",
+          "title": "Schemas with no runtime role",
+          "description": "Use a type when data is already typed and no runtime consumer needs a schema. Keep schemas that validate external input or generate API and serialization contracts.",
+          "severity": "warning",
+          "image": 8,
+          "weapon": 9,
+          "bad": "// Used only to declare a type; nothing consumes the schema.\nconst UserSchema = z.object({\n  id: z.string(),\n  name: z.string(),\n});\n\ntype User = z.infer<typeof UserSchema>;",
+          "good": "type User = {\n  id: string;\n  name: string;\n};"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "name": "Testing",
+      "color": "#82a597",
+      "codes": [
+        {
+          "id": "V010",
+          "title": "Missing behavior tests",
+          "description": "Test changed behavior that could regress, including relevant failure and boundary cases. Assert observable results, not implementation details.",
+          "severity": "warning",
+          "image": 9,
+          "weapon": 10,
+          "bad": "// Ranges exclude their end: touching ranges must not overlap.\nit(\"detects overlapping ranges\", () => {\n  expect(overlaps([0, 10], [5, 15])).toBe(true);\n});",
+          "good": "it(\"detects overlapping ranges\", () => {\n  expect(overlaps([0, 10], [5, 15])).toBe(true);\n});\n\nit(\"keeps touching ranges separate\", () => {\n  expect(overlaps([0, 10], [10, 20])).toBe(false);\n});"
+        }
+      ]
+    }
+  ]
+}

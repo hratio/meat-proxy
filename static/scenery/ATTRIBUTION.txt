@@ -1,0 +1,5 @@
+Waterfront scenery
+
+Original terrain, landmarks and waterfront geometry: hratio — Meat Proxy.
+Use within Meat Proxy under the root LICENSE; separate reuse requires permission.
+Source: https://github.com/hratio/meat-proxy

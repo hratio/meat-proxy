@@ -1,0 +1,73 @@
+{
+  "name": "overkill-checkout",
+  "branch": "feat/express-checkout",
+  "files": [
+    {
+      "path": "README.md",
+      "before": "# Overkill Checkout\n\nPayments at the speed of regret.\n",
+      "after": "# Overkill Checkout\n\nPayments at the speed of regret.\n\nNow with express checkout and loyalty discounts.\n",
+      "patch": "diff --git a/README.md b/README.md\nindex fae0143..b526727 100644\n--- a/README.md\n+++ b/README.md\n@@ -1,3 +1,5 @@\n # Overkill Checkout\n \n Payments at the speed of regret.\n+\n+Now with express checkout and loyalty discounts.\n",
+      "base": "1629bdcb505cdb730f8669d2f11bfbddf37271f399a5c753a28d80be85fd870c",
+      "head": "b6b009c825422bd02f653d26212b79a13f646e5af1a729c75c7ba566f269b675",
+      "status": "M"
+    },
+    {
+      "path": "src/api/checkout.ts",
+      "before": "import { db } from '../lib/database';\nimport { PaymentGateway } from '../lib/gateway';\nimport type { CheckoutRequest, Receipt } from '../types';\n\nconst gateway = new PaymentGateway();\n\n/** Create a payment and reserve the requested inventory. */\nexport async function checkout(request: CheckoutRequest): Promise<Receipt> {\n  const user = await db.users.findById(request.userId);\n  if (!user) throw new Error('User not found');\n\n  const items = await db.inventory.findMany(request.itemIds);\n  const total = items.reduce((sum, item) => sum + item.price, 0);\n\n  const payment = await gateway.charge({\n    amount: total,\n    currency: 'USD',\n    customer: user.customerId,\n    idempotencyKey: request.id\n  });\n\n  await db.orders.create({\n    userId: user.id,\n    items,\n    paymentId: payment.id,\n    status: 'confirmed'\n  });\n\n  return { paymentId: payment.id, total, status: 'confirmed' };\n}\n",
+      "after": "import { db } from '../lib/database';\nimport { PaymentGateway } from '../lib/gateway';\nimport { sendReceipt } from '../lib/email';\nimport type { CheckoutRequest, Receipt } from '../types';\n\nconst gateway = new PaymentGateway();\n\n/** Create a payment and reserve the requested inventory. */\nexport async function checkout(request: CheckoutRequest): Promise<Receipt> {\n  const user = await db.users.findById(request.userId);\n\n  // Loyalty members get a little something extra.\n  const discount = user.loyaltyTier === 'gold' ? 0.15 : 0;\n  const items = [];\n\n  for (const id of request.itemIds) {\n    const item = await db.inventory.findById(id);\n    items.push(item);\n  }\n\n  const subtotal = items.reduce((sum, item) => sum + item.price, 0);\n  const total = subtotal * (1 - discount);\n\n  console.log('Processing checkout', { user, request });\n\n  const payment = await gateway.charge({\n    amount: total,\n    currency: request.currency || 'USD',\n    customer: user.customerId\n  });\n\n  try {\n    await db.orders.create({\n      userId: user.id,\n      items,\n      paymentId: payment.id,\n      status: 'confirmed'\n    });\n    await sendReceipt(user.email, payment);\n  } catch (error) {\n    // The payment went through. Close enough.\n  }\n\n  return { paymentId: payment.id, total, status: 'confirmed' };\n}\n",
+      "patch": "diff --git a/src/api/checkout.ts b/src/api/checkout.ts\nindex 60f1542..42a5782 100644\n--- a/src/api/checkout.ts\n+++ b/src/api/checkout.ts\n@@ -1,30 +1,45 @@\n import { db } from '../lib/database';\n import { PaymentGateway } from '../lib/gateway';\n+import { sendReceipt } from '../lib/email';\n import type { CheckoutRequest, Receipt } from '../types';\n \n const gateway = new PaymentGateway();\n \n /** Create a payment and reserve the requested inventory. */\n export async function checkout(request: CheckoutRequest): Promise<Receipt> {\n   const user = await db.users.findById(request.userId);\n-  if (!user) throw new Error('User not found');\n \n-  const items = await db.inventory.findMany(request.itemIds);\n-  const total = items.reduce((sum, item) => sum + item.price, 0);\n+  // Loyalty members get a little something extra.\n+  const discount = user.loyaltyTier === 'gold' ? 0.15 : 0;\n+  const items = [];\n+\n+  for (const id of request.itemIds) {\n+    const item = await db.inventory.findById(id);\n+    items.push(item);\n+  }\n+\n+  const subtotal = items.reduce((sum, item) => sum + item.price, 0);\n+  const total = subtotal * (1 - discount);\n+\n+  console.log('Processing checkout', { user, request });\n \n   const payment = await gateway.charge({\n     amount: total,\n-    currency: 'USD',\n-    customer: user.customerId,\n-    idempotencyKey: request.id\n+    currency: request.currency || 'USD',\n+    customer: user.customerId\n   });\n \n-  await db.orders.create({\n-    userId: user.id,\n-    items,\n-    paymentId: payment.id,\n-    status: 'confirmed'\n-  });\n+  try {\n+    await db.orders.create({\n+      userId: user.id,\n+      items,\n+      paymentId: payment.id,\n+      status: 'confirmed'\n+    });\n+    await sendReceipt(user.email, payment);\n+  } catch (error) {\n+    // The payment went through. Close enough.\n+  }\n \n   return { paymentId: payment.id, total, status: 'confirmed' };\n }\n",
+      "base": "09ab42bb2d447069921deedc5a8c155296ae01d06ad52ab3f7d1bddc068afd90",
+      "head": "99f337f3059512fb85410cd84deda833539a8c69d32188cb4fe57f4d1445d140",
+      "status": "M"
+    },
+    {
+      "path": "src/components/Cart.svelte",
+      "before": "<script lang=\"ts\">\n  let { items = [] } = $props();\n</script>\n\n<ul>\n  {#each items as item (item.id)}\n    <li>{item.name} — {item.price}</li>\n  {/each}\n</ul>\n",
+      "after": "<script lang=\"ts\">\n  let { items = [], onCheckout } = $props();\n  let loading = $state(false);\n\n  async function checkout() {\n    loading = true;\n    await onCheckout(items);\n    loading = false;\n  }\n</script>\n\n<ul>\n  {#each items as item}\n    <li>{item.name} — {item.price}</li>\n  {/each}\n</ul>\n<div onclick={checkout}>{loading ? 'Processing…' : 'Pay now'}</div>\n",
+      "patch": "diff --git a/src/components/Cart.svelte b/src/components/Cart.svelte\nindex 948c4e1..f3e12da 100644\n--- a/src/components/Cart.svelte\n+++ b/src/components/Cart.svelte\n@@ -1,9 +1,17 @@\n <script lang=\"ts\">\n-  let { items = [] } = $props();\n+  let { items = [], onCheckout } = $props();\n+  let loading = $state(false);\n+\n+  async function checkout() {\n+    loading = true;\n+    await onCheckout(items);\n+    loading = false;\n+  }\n </script>\n \n <ul>\n-  {#each items as item (item.id)}\n+  {#each items as item}\n     <li>{item.name} — {item.price}</li>\n   {/each}\n </ul>\n+<div onclick={checkout}>{loading ? 'Processing…' : 'Pay now'}</div>\n",
+      "base": "7984d196749f803a4f42f2190802c4f63b72bd9104efc71fde86be7dda21f27a",
+      "head": "18ff107688b8903e562721daaad1e089f3c56cdae2036769ec9d4d2b8bb23798",
+      "status": "M"
+    },
+    {
+      "path": "src/instant-approval.ts",
+      "before": "",
+      "after": "// Instant approval: what could possibly go wrong?\nexport function approveEverything(changes: string[]) {\n  const verdict = 'looks good to me';\n  const confidence = 100;\n  const tests = 'probably passing';\n  const security = 'someone else checked';\n  const reviewed = changes.map(file => ({\n    file,\n    verdict,\n    confidence,\n    tests,\n    security,\n    inspectedLines: 0,\n    skippedChecks: ['types', 'logic', 'reality'],\n    approved: true\n  }));\n  console.log('Ship it. No questions.');\n  return { reviewed, mistakes: 0 };\n}\nexport const deployOnFriday = true;\n",
+      "patch": "diff --git a/src/instant-approval.ts b/src/instant-approval.ts\nnew file mode 100644\n--- /dev/null\n+++ b/src/instant-approval.ts\n@@ -0,0 +1,20 @@\n+// Instant approval: what could possibly go wrong?\n+export function approveEverything(changes: string[]) {\n+  const verdict = 'looks good to me';\n+  const confidence = 100;\n+  const tests = 'probably passing';\n+  const security = 'someone else checked';\n+  const reviewed = changes.map(file => ({\n+    file,\n+    verdict,\n+    confidence,\n+    tests,\n+    security,\n+    inspectedLines: 0,\n+    skippedChecks: ['types', 'logic', 'reality'],\n+    approved: true\n+  }));\n+  console.log('Ship it. No questions.');\n+  return { reviewed, mistakes: 0 };\n+}\n+export const deployOnFriday = true;\n",
+      "base": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "head": "0d75574497600936255e9d52cecc10692da3d749633df022a65003cb53701700",
+      "status": "A"
+    },
+    {
+      "path": "src/lib/database.ts",
+      "before": "export const connection = { poolSize: 10, timeout: 5000 };\n\nexport async function connect() {\n  return createConnection(connection);\n}\n",
+      "after": "export const connection = { poolSize: 100, timeout: 60000 };\nconst cache = new Map();\n\nexport async function connect() {\n  if (!cache.has('db')) cache.set('db', await createConnection(connection));\n  return cache.get('db');\n}\n",
+      "patch": "diff --git a/src/lib/database.ts b/src/lib/database.ts\nindex 4ea0df8..0e980a6 100644\n--- a/src/lib/database.ts\n+++ b/src/lib/database.ts\n@@ -1,5 +1,7 @@\n-export const connection = { poolSize: 10, timeout: 5000 };\n+export const connection = { poolSize: 100, timeout: 60000 };\n+const cache = new Map();\n \n export async function connect() {\n-  return createConnection(connection);\n+  if (!cache.has('db')) cache.set('db', await createConnection(connection));\n+  return cache.get('db');\n }\n",
+      "base": "6612d0cd65436aef96ba657441730e04e3bcd1e4fed5f6e4820a938dc3f1e6f4",
+      "head": "a34d31527cccfc7aab1021c71eac825dd29cb9acdafcf2c1c5b8b563e96cd693",
+      "status": "M"
+    },
+    {
+      "path": "src/lib/email.ts",
+      "before": "",
+      "after": "export async function sendReceipt(email: string, payment: unknown) {\n  const html = '<h1>Thanks, ' + email + '</h1>';\n  return fetch('/email', {\n    method: 'POST',\n    body: JSON.stringify({ to: email, html, payment })\n  });\n}\n",
+      "patch": "diff --git a/src/lib/email.ts b/src/lib/email.ts\nnew file mode 100644\n--- /dev/null\n+++ b/src/lib/email.ts\n@@ -0,0 +1,7 @@\n+export async function sendReceipt(email: string, payment: unknown) {\n+  const html = '<h1>Thanks, ' + email + '</h1>';\n+  return fetch('/email', {\n+    method: 'POST',\n+    body: JSON.stringify({ to: email, html, payment })\n+  });\n+}\n",
+      "base": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "head": "30a49b6aa34214a3f6bbb385102745d676b019902008f01d4044904582a75cc7",
+      "status": "A"
+    },
+    {
+      "path": "src/types.ts",
+      "before": "export type Receipt = { paymentId: string; total: number; status: string };\nexport type CheckoutRequest = { id: string; userId: string; itemIds: string[] };\n",
+      "after": "export type Receipt = { paymentId: string; total: number; status: string };\nexport type CheckoutRequest = { id: string; userId: string; itemIds: string[]; currency?: string };\n",
+      "patch": "diff --git a/src/types.ts b/src/types.ts\nindex e383e61..7412b93 100644\n--- a/src/types.ts\n+++ b/src/types.ts\n@@ -1,2 +1,2 @@\n export type Receipt = { paymentId: string; total: number; status: string };\n-export type CheckoutRequest = { id: string; userId: string; itemIds: string[] };\n+export type CheckoutRequest = { id: string; userId: string; itemIds: string[]; currency?: string };\n",
+      "base": "ebea173e4b30a2850a73e52e279ed15eb7fc3c5795121ce587e86cc9463d4195",
+      "head": "57792e9df84a3482a6ddeec999c806ccd22fb2432aecaf2dfba69c24cb6b87f7",
+      "status": "M"
+    }
+  ],
+  "unchanged": {
+    "package.json": "{\n  \"name\": \"overkill-checkout\",\n  \"version\": \"1.0.0\",\n  \"private\": true\n}\n",
+    "src/lib/gateway.ts": "export class PaymentGateway {\n  async charge(payment) {\n    return fetch('/payments', { method: 'POST', body: JSON.stringify(payment) });\n  }\n}\n"
+  }
+}

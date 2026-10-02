@@ -1,0 +1,822 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "experience": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "mode": {
+          "default": "game",
+          "description": "Serious mode uses the violation wheel without weapons, game effects or audio.",
+          "type": "string",
+          "enum": [
+            "game",
+            "review"
+          ]
+        }
+      }
+    },
+    "destruction": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "shotsToComplete": {
+          "default": 80,
+          "description": "Starting health for each file. Hits removing new material take 1 HP; empty hits do not count. Set to 0 for unlimited destruction.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "borderStyle": {
+          "default": "lock",
+          "type": "string",
+          "enum": [
+            "lock",
+            "glow",
+            "dashed"
+          ]
+        }
+      }
+    },
+    "fileFilters": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "presets": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60
+              },
+              "include": {
+                "default": {},
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "default": "",
+                    "type": "string",
+                    "maxLength": 20000
+                  },
+                  "regex": {
+                    "default": false,
+                    "type": "boolean"
+                  }
+                }
+              },
+              "exclude": {
+                "default": {},
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "default": "",
+                    "type": "string",
+                    "maxLength": 20000
+                  },
+                  "regex": {
+                    "default": false,
+                    "type": "boolean"
+                  }
+                }
+              },
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            },
+            "required": [
+              "name",
+              "id"
+            ]
+          }
+        }
+      }
+    },
+    "display": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "background": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "mode": {
+              "default": "image",
+              "type": "string",
+              "enum": [
+                "none",
+                "image",
+                "color",
+                "scene"
+              ]
+            },
+            "image": {
+              "default": "fine-grain.svg",
+              "description": "Filename from src/lib/backgrounds/assets. Unknown images fall back to the theme background.",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 255
+            },
+            "color": {
+              "default": "#11120f",
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "opacity": {
+              "default": 0.028,
+              "description": "Image opacity, from 0 (transparent) to 1 (opaque).",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sizing": {
+              "default": "tile",
+              "type": "string",
+              "enum": [
+                "cover",
+                "contain",
+                "stretch",
+                "tile",
+                "center"
+              ]
+            },
+            "sceneOpacity": {
+              "default": 0.35,
+              "description": "3D city opacity, independent of the image opacity.",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sceneBlur": {
+              "default": 2,
+              "description": "3D city blur in pixels.",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "sceneFocus": {
+              "default": 0.8,
+              "description": "Strength of the soft shade behind the review area.",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "shellTheme": {
+          "default": "bunker",
+          "description": "Interface palette. Independent of the diff syntax theme.",
+          "type": "string",
+          "enum": [
+            "bunker",
+            "slate",
+            "ember",
+            "oxide",
+            "midnight"
+          ]
+        },
+        "customColors": {
+          "default": false,
+          "description": "Apply personal tint and accent overrides to the shell theme.",
+          "type": "boolean"
+        },
+        "baseTint": {
+          "description": "Personal surface tint, applied when custom colors are enabled.",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "accent": {
+          "description": "Personal accent color, applied when custom colors are enabled.",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "showSplashScreen": {
+          "default": true,
+          "type": "boolean"
+        },
+        "diffTheme": {
+          "default": "pierre-dark",
+          "type": "string",
+          "enum": [
+            "pierre-dark",
+            "github-dark",
+            "dracula",
+            "nord",
+            "tokyo-night",
+            "catppuccin-mocha",
+            "monokai",
+            "vitesse-dark",
+            "github-light"
+          ]
+        },
+        "diffStyle": {
+          "default": "unified",
+          "type": "string",
+          "enum": [
+            "unified",
+            "split"
+          ]
+        },
+        "fileView": {
+          "default": "all",
+          "type": "string",
+          "enum": [
+            "single",
+            "all"
+          ]
+        },
+        "showCompletedFiles": {
+          "default": true,
+          "type": "boolean"
+        },
+        "showFileFindings": {
+          "default": true,
+          "type": "boolean"
+        },
+        "showFileComments": {
+          "default": true,
+          "type": "boolean"
+        },
+        "showFileIcons": {
+          "default": true,
+          "type": "boolean"
+        },
+        "showFileGitStatus": {
+          "default": true,
+          "type": "boolean"
+        },
+        "showFileReviewed": {
+          "default": true,
+          "type": "boolean"
+        },
+        "fileTreeDensity": {
+          "default": "normal",
+          "type": "string",
+          "enum": [
+            "normal",
+            "dense"
+          ]
+        },
+        "fileSort": {
+          "default": "default",
+          "type": "string",
+          "enum": [
+            "default",
+            "easy",
+            "hard"
+          ]
+        },
+        "filePriorities": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "findings": {
+              "default": false,
+              "type": "boolean"
+            },
+            "comments": {
+              "default": false,
+              "type": "boolean"
+            },
+            "recentComments": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        },
+        "sidebarLeft": {
+          "default": true,
+          "type": "boolean"
+        },
+        "explorerVisible": {
+          "default": true,
+          "type": "boolean"
+        },
+        "wideMode": {
+          "default": true,
+          "type": "boolean"
+        },
+        "fontSize": {
+          "default": 13,
+          "type": "number",
+          "minimum": 10,
+          "maximum": 22
+        },
+        "uiFontSize": {
+          "default": 14,
+          "type": "number",
+          "minimum": 12,
+          "maximum": 20
+        },
+        "uiLabelSize": {
+          "default": 12,
+          "type": "number",
+          "minimum": 11,
+          "maximum": 18
+        },
+        "lineHeight": {
+          "default": 26,
+          "type": "number",
+          "minimum": 16,
+          "maximum": 40
+        },
+        "weaponDisplay": {
+          "default": "image",
+          "type": "string",
+          "enum": [
+            "image",
+            "code"
+          ]
+        },
+        "showResolved": {
+          "default": true,
+          "type": "boolean"
+        },
+        "reducedMotion": {
+          "default": false,
+          "type": "boolean"
+        },
+        "toastMs": {
+          "default": 3500,
+          "type": "integer",
+          "minimum": 500,
+          "maximum": 9007199254740991
+        },
+        "toastPosition": {
+          "default": "bottom-left",
+          "type": "string",
+          "enum": [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right"
+          ]
+        },
+        "diffInlineMarkColor": {
+          "default": "#ffd452",
+          "description": "Color and opacity of marked-range borders and the rail beside the diff indicators.",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+        },
+        "diffInlineMarkBorderWidthPx": {
+          "default": 1,
+          "description": "Top and bottom border thickness for each continuous marked range. Set to 0 to keep only the rail.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 6
+        }
+      }
+    },
+    "hud": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "titleSize": {
+          "default": 14,
+          "type": "number",
+          "minimum": 10,
+          "maximum": 24
+        },
+        "alwaysShowCode": {
+          "default": false,
+          "type": "boolean"
+        },
+        "codeWordWrap": {
+          "default": false,
+          "type": "boolean"
+        },
+        "tintStrength": {
+          "default": 0.3,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "navigatorEnabled": {
+          "default": true,
+          "type": "boolean"
+        },
+        "navigatorAlwaysVisible": {
+          "default": false,
+          "type": "boolean"
+        }
+      }
+    },
+    "targets": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "artwork": {
+          "default": "blade-runner",
+          "type": "string",
+          "enum": [
+            "blade-runner",
+            "nuclear-reactor",
+            "rune"
+          ]
+        }
+      }
+    },
+    "transmissions": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "type": "boolean"
+        }
+      }
+    },
+    "gameplay": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "autoScroll": {
+          "default": false,
+          "type": "boolean"
+        },
+        "autoAdvance": {
+          "default": true,
+          "type": "boolean"
+        },
+        "scrollPxPerSecond": {
+          "default": 50,
+          "type": "number",
+          "minimum": 5,
+          "maximum": 500
+        },
+        "sound": {
+          "default": true,
+          "type": "boolean"
+        },
+        "adlibs": {
+          "default": true,
+          "type": "boolean"
+        },
+        "volume": {
+          "default": 0.18,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "weapons": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "mainModel": {
+          "default": "/models/weapons/rhein-9.glb",
+          "type": "string"
+        },
+        "secondaryModel": {
+          "default": "/models/weapons/iron-verdict.glb",
+          "type": "string"
+        }
+      }
+    },
+    "editor": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Show the open-in-editor button beside Copy path in diff headers.",
+          "type": "boolean"
+        },
+        "executable": {
+          "default": "",
+          "description": "Editor executable name or full path, without arguments or quotes. Empty selects Visual Studio Code for the server OS.",
+          "type": "string",
+          "maxLength": 4096
+        }
+      }
+    },
+    "gloves": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "type": "boolean"
+        },
+        "mainText": {
+          "default": "FIX IT",
+          "type": "string",
+          "maxLength": 24
+        },
+        "altText": {
+          "default": "LGTM",
+          "type": "string",
+          "maxLength": 24
+        },
+        "textColor": {
+          "default": "#cbd0d8",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "glow": {
+          "default": false,
+          "type": "boolean"
+        },
+        "glowColor": {
+          "default": "#ed2945",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "glowIntensity": {
+          "default": 1.5,
+          "type": "number",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "pulse": {
+          "default": false,
+          "type": "boolean"
+        },
+        "pulseColor": {
+          "default": "#971b32",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "pulseSeconds": {
+          "default": 3,
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 10
+        }
+      }
+    },
+    "crosshair": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "default": "default",
+          "type": "string",
+          "enum": [
+            "default",
+            "system",
+            "classic",
+            "cross",
+            "dot",
+            "ring",
+            "ring-dot",
+            "brackets",
+            "chevron",
+            "diamond"
+          ]
+        },
+        "color": {
+          "default": "#f6ad7e",
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+        },
+        "sizePx": {
+          "default": 25,
+          "type": "integer",
+          "minimum": 12,
+          "maximum": 48
+        }
+      }
+    },
+    "bindings": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "mainGroupPrev": {
+          "default": "w",
+          "type": "string",
+          "maxLength": 40
+        },
+        "mainGroupNext": {
+          "default": "s",
+          "type": "string",
+          "maxLength": 40
+        },
+        "mainCodePrev": {
+          "default": "a",
+          "type": "string",
+          "maxLength": 40
+        },
+        "mainCodeNext": {
+          "default": "d",
+          "type": "string",
+          "maxLength": 40
+        },
+        "secondaryGroupPrev": {
+          "default": "shift+w",
+          "type": "string",
+          "maxLength": 40
+        },
+        "secondaryGroupNext": {
+          "default": "shift+s",
+          "type": "string",
+          "maxLength": 40
+        },
+        "secondaryCodePrev": {
+          "default": "shift+a",
+          "type": "string",
+          "maxLength": 40
+        },
+        "secondaryCodeNext": {
+          "default": "shift+d",
+          "type": "string",
+          "maxLength": 40
+        },
+        "mainToggle": {
+          "default": "g",
+          "type": "string",
+          "maxLength": 40
+        },
+        "secondaryToggle": {
+          "default": "shift+g",
+          "type": "string",
+          "maxLength": 40
+        },
+        "mainFire": {
+          "default": "mouse1",
+          "type": "string",
+          "maxLength": 40
+        },
+        "secondaryFire": {
+          "default": "f",
+          "type": "string",
+          "maxLength": 40
+        },
+        "erase": {
+          "default": "mouse3",
+          "type": "string",
+          "maxLength": 40
+        },
+        "comment": {
+          "default": "t",
+          "type": "string",
+          "maxLength": 40
+        },
+        "addVcode": {
+          "default": "v",
+          "type": "string",
+          "maxLength": 40
+        },
+        "completeFile": {
+          "default": "space",
+          "type": "string",
+          "maxLength": 40
+        },
+        "destroyFile": {
+          "default": "b",
+          "type": "string",
+          "maxLength": 40
+        },
+        "destroyAll": {
+          "default": "shift+b",
+          "type": "string",
+          "maxLength": 40
+        },
+        "toggleFile": {
+          "default": "c",
+          "type": "string",
+          "maxLength": 40
+        },
+        "reload": {
+          "default": "r",
+          "type": "string",
+          "maxLength": 40
+        },
+        "undo": {
+          "default": "z",
+          "type": "string",
+          "maxLength": 40
+        },
+        "redo": {
+          "default": "y",
+          "type": "string",
+          "maxLength": 40
+        },
+        "nextFile": {
+          "default": "j",
+          "type": "string",
+          "maxLength": 40
+        },
+        "prevFile": {
+          "default": "k",
+          "type": "string",
+          "maxLength": 40
+        },
+        "nextUnreviewed": {
+          "default": "n",
+          "type": "string",
+          "maxLength": 40
+        },
+        "toggleScroll": {
+          "default": "p",
+          "type": "string",
+          "maxLength": 40
+        },
+        "findings": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "reviewBindings": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "erase": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "comment": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "addVcode": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "completeFile": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "toggleFile": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "undo": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "redo": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "nextFile": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "prevFile": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "nextUnreviewed": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "toggleScroll": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "findings": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "onboarding": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "colorPickerUnlocked": {
+          "default": false,
+          "type": "boolean"
+        }
+      }
+    },
+    "dispatch": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "autoCopyInstructions": {
+          "default": false,
+          "description": "Automatically copy agent instructions and skip the outbox dialog after dispatch. If copying fails, the dialog opens.",
+          "type": "boolean"
+        }
+      }
+    },
+    "export": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "includeCatalog": {
+          "default": true,
+          "type": "boolean"
+        },
+        "includeExamples": {
+          "default": true,
+          "type": "boolean"
+        },
+        "includeResolved": {
+          "default": false,
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

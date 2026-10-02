@@ -1,0 +1,49 @@
+@reference '../../app.css';
+
+/* Pierre owns these elements inside a shadow root. Compile Tailwind here and
+   pass the resulting sheet to its unsafeCSS hook; document utilities cannot
+   reach the shadow DOM. */
+:host {
+  @apply [--diffs-font-family:var(--mono)] [--diffs-font-size:var(--pr-diff-font-size)] [--diffs-line-height:var(--pr-diff-line-height)];
+}
+:host([data-pr-theme='pierre-dark']) {
+  @apply [--diffs-bg:#141512];
+}
+:host, :host * {
+  @apply cursor-(--pr-code-cursor)!;
+}
+:host [data-expand-button], :host [data-expand-button] *, :host [data-unmodified-lines] {
+  @apply cursor-default!;
+}
+[data-hovered] {
+  @apply outline-1 outline-solid -outline-offset-1 outline-(--diffs-fg)/40;
+}
+[data-pr-mark] {
+  @apply [--pr-mark-top:0px] [--pr-mark-bottom:0px]
+    [--pr-mark-overlay:--alpha(var(--diffs-fg)/var(--pr-mark-opacity))]
+    inset-shadow-[0_var(--pr-mark-top)_0_0_var(--diff-inline-mark-color),0_calc(-1*var(--pr-mark-bottom))_0_0_var(--diff-inline-mark-color),0_0_0_100vmax_var(--pr-mark-overlay)];
+}
+[data-pr-mark~='start'] {
+  @apply [--pr-mark-top:var(--diff-inline-mark-border-width)];
+}
+[data-pr-mark~='end'] {
+  @apply [--pr-mark-bottom:var(--diff-inline-mark-border-width)];
+}
+/* Reserve four pixels beside the native indicator, including unmarked rows,
+   so adding/removing findings never moves the line numbers or the code. */
+[data-indicators='bars'] [data-column-number]::before {
+  @apply left-1;
+}
+[data-indicators='bars'] [data-column-number][data-pr-mark]::before {
+  @apply top-(--pr-mark-top) h-[calc(100%-var(--pr-mark-top)-var(--pr-mark-bottom))];
+}
+[data-column-number][data-pr-mark]::after {
+  @apply pointer-events-none absolute top-(--pr-mark-top) bottom-(--pr-mark-bottom) left-0 block w-1 select-none content-['']
+    bg-(--diff-inline-mark-color);
+}
+
+/* Code panes scroll horizontally only; stable reserves an unused vertical gutter. */
+[data-code] { scrollbar-gutter: auto; }
+
+/* Paint-only destruction preserves text shaping, token styles and line layout. */
+::highlight(pr-destruction) { color: transparent; text-shadow: none; }

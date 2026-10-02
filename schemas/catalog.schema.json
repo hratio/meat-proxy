@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "number",
+      "const": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "destructionMark": {
+      "description": "V-code or canned response ID added once at file level when destruction completes. Empty or omitted requires choosing a mark before entering destruction mode.",
+      "anyOf": [
+        {
+          "type": "string",
+          "const": ""
+        },
+        {
+          "type": "string",
+          "pattern": "^[VC]\\d{3,6}$"
+        }
+      ]
+    },
+    "groups": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "weapon": {
+            "anyOf": [
+              {
+                "type": "number",
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "description": "1: Iron Verdict; 2: Twin Clause; 3: Rhein-9; 4: Stack-10; 5: AK-256; 6: Elastic SAW; 7: BRRRT-10; 8: Heavenfire AH-67; 9: Daz Ratatatata; 10: Merge Obliterator 9000; 11: Auto-BMG; 12: Sloppydisk; 13: Flaky Assertions"
+              },
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000,
+                "description": "Custom weapon model URL."
+              }
+            ],
+            "description": "Stable built-in weapon ID or a custom model URL. Omit to inherit the group weapon or slot default."
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "codes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 5000
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "info",
+                    "warning",
+                    "critical"
+                  ]
+                },
+                "image": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 29
+                    },
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "One visible Unicode character (grapheme), including composed letters and emoji."
+                    }
+                  ]
+                },
+                "bad": {
+                  "type": "string",
+                  "maxLength": 10000
+                },
+                "good": {
+                  "type": "string",
+                  "maxLength": 10000
+                },
+                "weapon": {
+                  "anyOf": [
+                    {
+                      "type": "number",
+                      "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13
+                      ],
+                      "description": "1: Iron Verdict; 2: Twin Clause; 3: Rhein-9; 4: Stack-10; 5: AK-256; 6: Elastic SAW; 7: BRRRT-10; 8: Heavenfire AH-67; 9: Daz Ratatatata; 10: Merge Obliterator 9000; 11: Auto-BMG; 12: Sloppydisk; 13: Flaky Assertions"
+                    },
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000,
+                      "description": "Custom weapon model URL."
+                    }
+                  ],
+                  "description": "Stable built-in weapon ID or a custom model URL. Omit to inherit the group weapon or slot default."
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^V\\d{3,6}$"
+                }
+              },
+              "required": [
+                "title",
+                "description",
+                "severity",
+                "image",
+                "id"
+              ]
+            }
+          },
+          "responses": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "content": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^C\\d{3,6}$"
+                }
+              },
+              "required": [
+                "title",
+                "content",
+                "id"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "color",
+          "id",
+          "codes"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "name",
+    "groups"
+  ]
+}

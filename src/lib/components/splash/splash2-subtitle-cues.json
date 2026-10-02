@@ -1,0 +1,146 @@
+[
+  {
+    "id": "voice-01",
+    "startMs": 140,
+    "endMs": 1960,
+    "text": "Programming is dead."
+  },
+  {
+    "id": "voice-02",
+    "startMs": 4120,
+    "endMs": 7300,
+    "text": "The corporate overlords put gods in the server racks."
+  },
+  {
+    "id": "voice-03",
+    "startMs": 7900,
+    "endMs": 9820,
+    "text": "Told us to call it progress."
+  },
+  {
+    "id": "voice-04",
+    "startMs": 10420,
+    "endMs": 12180,
+    "text": "We used to build things."
+  },
+  {
+    "id": "voice-05",
+    "startMs": 12420,
+    "endMs": 14300,
+    "text": "Now, we prompt."
+  },
+  {
+    "id": "voice-06",
+    "startMs": 14600,
+    "endMs": 15420,
+    "text": "We wait."
+  },
+  {
+    "id": "voice-07",
+    "startMs": 15660,
+    "endMs": 17200,
+    "text": "We review the damage."
+  },
+  {
+    "id": "voice-08",
+    "startMs": 17260,
+    "endMs": 21180,
+    "text": "A thousand lines of God knows what for a ten-line problem."
+  },
+  {
+    "id": "voice-09",
+    "startMs": 22780,
+    "endMs": 25980,
+    "text": "Here we sit, scolded by the fluorescent lights,"
+  },
+  {
+    "id": "voice-10",
+    "startMs": 26320,
+    "endMs": 28040,
+    "text": "monitoring our token usage,"
+  },
+  {
+    "id": "voice-11",
+    "startMs": 28480,
+    "endMs": 30780,
+    "text": "praying for a weekly usage reset."
+  },
+  {
+    "id": "voice-12",
+    "startMs": 32480,
+    "endMs": 36400,
+    "text": "If only the agents cared about what we have to say."
+  },
+  {
+    "id": "voice-13",
+    "startMs": 36840,
+    "endMs": 38700,
+    "text": "All upstairs tells us is that"
+  },
+  {
+    "id": "voice-14",
+    "startMs": 38720,
+    "endMs": 40100,
+    "text": "it's just a skill issue."
+  },
+  {
+    "id": "voice-15",
+    "startMs": 40120,
+    "endMs": 44560,
+    "text": "There is a new skill library with over 100,000 stars on GitHub."
+  },
+  {
+    "id": "voice-16",
+    "startMs": 44600,
+    "endMs": 46320,
+    "text": "Have you checked that out?"
+  },
+  {
+    "id": "voice-17",
+    "startMs": 46540,
+    "endMs": 49800,
+    "text": "Pfft, like that would solve any of the shit we deal with."
+  },
+  {
+    "id": "voice-18",
+    "startMs": 50760,
+    "endMs": 51800,
+    "text": "Meat proxies."
+  },
+  {
+    "id": "voice-19",
+    "startMs": 52140,
+    "endMs": 53380,
+    "text": "That's what we've become."
+  },
+  {
+    "id": "voice-20",
+    "startMs": 53740,
+    "endMs": 55840,
+    "text": "Just enough human left to take the blame."
+  },
+  {
+    "id": "voice-21",
+    "startMs": 58000,
+    "endMs": 60080,
+    "text": "I'm done leaving polite little comments."
+  },
+  {
+    "id": "voice-22",
+    "startMs": 64060,
+    "endMs": 65200,
+    "text": "Buckle up, boys."
+  },
+  {
+    "id": "voice-23",
+    "startMs": 65300,
+    "endMs": 66360,
+    "text": "We're going in."
+  },
+  {
+    "id": "voice-24",
+    "startMs": 69120,
+    "endMs": 70560,
+    "text": "Line by line."
+  }
+]

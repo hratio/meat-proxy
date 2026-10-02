@@ -1,0 +1,84 @@
+/* Only artwork consumes these colors. The theme supplies hue/saturation;
+   each material keeps its own lightness, so a dark theme cannot black it out. */
+html {
+  --hud-art-tint-percent: calc(var(--hud-art-tint-strength, .3) * 100%);
+  --hud-accent: var(--primary);
+  --hud-art-metal: color-mix(in srgb, #292929, hsl(from var(--ui-tint) h s 16%) var(--hud-art-tint-percent));
+  --hud-art-top: color-mix(in srgb, #454545, hsl(from var(--ui-tint) h s 27%) var(--hud-art-tint-percent));
+  --hud-art-bottom: color-mix(in srgb, #181818, hsl(from var(--ui-tint) h s 9.5%) var(--hud-art-tint-percent));
+  --hud-art-edge: color-mix(in srgb, #666666, hsl(from var(--ui-tint) h s 40%) var(--hud-art-tint-percent));
+  --hud-art-highlight: #a5a5a5;
+  --hud-art-shadow: #040404;
+  --hud-art-well-top: #121212;
+  --hud-art-well: #0a0a0a;
+  --hud-art-accent: var(--primary);
+  --hud-art-recess: #191919;
+  --hud-art-patina: #787878;
+}
+
+
+html :is(.hud-frame, .chassis) {
+  --hud-metal: var(--hud-art-metal);
+  --hud-metal-top: var(--hud-art-top);
+  --hud-metal-bottom: var(--hud-art-bottom);
+  --hud-edge: var(--hud-art-edge);
+  --hud-highlight: var(--hud-art-highlight);
+  --hud-shadow: var(--hud-art-shadow);
+  --hud-well-top: var(--hud-art-well-top);
+  --hud-well: var(--hud-art-well);
+  --tint-030605: var(--hud-art-shadow);
+  --tint-020403: #020202;
+  --tint-020503: #050505;
+  --tint-010402: #030303;
+  --tint-030604: #070707;
+  --tint-050906: #060606;
+  --tint-040704b3: #070707b3;
+  --tint-0b100bad: #0d0d0dad;
+  --tint-b8b39330: #bcbcbc30;
+  --tint-a7b39b4a: #b0b0b04a;
+  --tint-e0e3d8: #d9d9d9;
+  --tint-ced4cc: #cbcbcb;
+  --tint-819087: #898989;
+  --tint-708a7f: #878787;
+  --tint-6a7a74: #797979;
+  --tint-91a3961c: #a8a8a81c;
+  --tint-52635866: #73737366;
+  --tint-a0ac8c16: #a7a7a716;
+  --tint-a5915433: #8d8d8d1a;
+  --tint-c5b583: var(--hud-art-highlight);
+  --tint-a9b8a3: #9a9a9a;
+  --tint-a8ba8a: var(--hud-art-accent);
+}
+
+html .finding-inner { padding: 24px var(--hud-panel-right, 22px) 22px var(--hud-panel-left, 17px); }
+html .finding-panel > .hud-frame.mirrored { --hud-panel-left: 22px; --hud-panel-right: 17px; }
+html .group-heading {
+  position: relative; height: 27px; padding: 0 9px;
+  clip-path: polygon(6px 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%, 0 6px);
+  background: linear-gradient(180deg, var(--hud-art-top), var(--hud-art-metal) 3px, var(--hud-art-bottom) 95%, #050505);
+  box-shadow: inset 0 1px var(--hud-art-edge), inset 0 -2px #050505, inset 2px 0 #55555550, inset -2px 0 #030303;
+  border: 0;
+}
+html .group-heading::after { content: ''; position: absolute; right: 10px; bottom: 3px; width: 48px; height: 1px; background: var(--hud-art-edge); opacity: .35; }
+html .identity-frame { margin-top: 4px; border: 0; --blade-display-top: color-mix(in srgb, var(--hud-art-metal) 65%, #080808); --blade-display-bottom: #0b0b0b; }
+html .chassis { clip-path: inset(calc(100% - 96px) 8px 8px); }
+/* The cassette seats over the bridge and rail, with its brackets tucked behind
+   both code panels. Bracket reach follows the configurable assembly gap. */
+/* Shorter ribs retain their spacing and bevel thickness instead of scaling. */
+html .base-rail { position: relative; height: 16px; margin-top: -10px; background: linear-gradient(var(--hud-art-top), var(--hud-art-bottom) 4px, #0a0a0a calc(100% - 4px), var(--hud-art-metal)); clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%, 0 6px); border-top: 1px solid var(--hud-art-edge); }
+html .base-rail::after { content: ''; position: absolute; inset: 3px 20px; background: repeating-linear-gradient(90deg, #020202 0 3px, transparent 3px 7px); opacity: .6; }
+html .exploded .base-rail { margin-top: 12px; }
+html .exploded .portrait-module .mount { display: none; }
+/* Module spacing controls the horizontal joins, not the rail's contact. */
+html .combat-assembly.docked:not(.exploded) { row-gap: 0; }
+@container hud (min-width: 561px) {
+  html .combat-assembly:not(.exploded) { row-gap: 0; }
+}
+@container hud (max-width: 560px) {
+  html .combat-assembly:not(.docked) .portrait-module .mount { display: none; }
+  html .combat-assembly:not(.docked):not(.exploded) .base-rail { margin-top: -10px; }
+}
+html :is(.hud-container[data-left-mode='compact'] .left-panel, .hud-container[data-right-mode='compact'] .right-panel) .finding-inner { padding: 23px var(--hud-panel-right, 22px) 22px var(--hud-panel-left, 17px); }
+@container finding (max-width: 180px) {
+  html .finding-inner { padding: 16px 18px 14px; }
+}

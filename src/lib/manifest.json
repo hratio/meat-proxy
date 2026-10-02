@@ -1,0 +1,733 @@
+{
+  "presets": [
+    {
+      "id": "vickers-303",
+      "name": ".303 Vickers",
+      "group": "automatic",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/vickers-303/shot.ogg",
+          "durationSec": 0.485
+        },
+        "loop": {
+          "url": "/audio/library/vickers-303/loop.ogg",
+          "durationSec": 1.573
+        },
+        "burst": {
+          "url": "/audio/library/vickers-303/burst.ogg",
+          "durationSec": 0.746
+        },
+        "stop": {
+          "url": "/audio/library/vickers-303/stop.ogg",
+          "durationSec": 0.432
+        }
+      },
+      "fireIntervalMs": 131,
+      "sound": {
+        "shot": "/audio/library/vickers-303/shot.ogg",
+        "loop": "/audio/library/vickers-303/loop.ogg",
+        "stop": "/audio/library/vickers-303/stop.ogg",
+        "loopDelayMs": 131,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "lmg-762",
+      "name": "7.62 light machine gun",
+      "group": "automatic",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/lmg-762/shot.ogg",
+          "durationSec": 0.48
+        },
+        "loop": {
+          "url": "/audio/library/lmg-762/loop.ogg",
+          "durationSec": 0.164
+        },
+        "burst": {
+          "url": "/audio/library/lmg-762/burst.ogg",
+          "durationSec": 0.728
+        },
+        "stop": {
+          "url": "/audio/library/lmg-762/stop.ogg",
+          "durationSec": 0.376
+        }
+      },
+      "fireIntervalMs": 82,
+      "sound": {
+        "shot": "/audio/library/lmg-762/shot.ogg",
+        "loop": "/audio/library/lmg-762/loop.ogg",
+        "stop": "/audio/library/lmg-762/stop.ogg",
+        "loopDelayMs": 82,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "ak-47",
+      "name": "AK-47",
+      "group": "automatic",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/ak-47/shot.ogg",
+          "durationSec": 0.897
+        },
+        "loop": {
+          "url": "/audio/library/ak-47/loop.ogg",
+          "durationSec": 1.224
+        },
+        "burst": {
+          "url": "/audio/library/ak-47/burst.ogg",
+          "durationSec": 1.103
+        },
+        "stop": {
+          "url": "/audio/library/ak-47/stop.ogg",
+          "durationSec": 0.752
+        }
+      },
+      "fireIntervalMs": 102,
+      "sound": {
+        "shot": "/audio/library/ak-47/shot.ogg",
+        "loop": "/audio/library/ak-47/loop.ogg",
+        "stop": "/audio/library/ak-47/stop.ogg",
+        "loopDelayMs": 102,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "mp40",
+      "name": "MP40",
+      "group": "automatic",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/mp40/shot.ogg",
+          "durationSec": 0.517
+        },
+        "loop": {
+          "url": "/audio/library/mp40/loop.ogg",
+          "durationSec": 0.301
+        },
+        "burst": {
+          "url": "/audio/library/mp40/burst.ogg",
+          "durationSec": 0.637
+        },
+        "stop": {
+          "url": "/audio/library/mp40/stop.ogg",
+          "durationSec": 0.48
+        }
+      },
+      "fireIntervalMs": 60,
+      "sound": {
+        "shot": "/audio/library/mp40/shot.ogg",
+        "loop": "/audio/library/mp40/loop.ogg",
+        "stop": "/audio/library/mp40/stop.ogg",
+        "loopDelayMs": 60,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "uzi",
+      "name": "Uzi",
+      "group": "automatic",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/uzi/shot.ogg",
+          "durationSec": 0.2
+        },
+        "loop": {
+          "url": "/audio/library/uzi/loop.ogg",
+          "durationSec": 1.088
+        },
+        "burst": {
+          "url": "/audio/library/uzi/burst.ogg",
+          "durationSec": 0.327
+        },
+        "stop": {
+          "url": "/audio/library/uzi/stop.ogg",
+          "durationSec": 0.161
+        }
+      },
+      "fireIntervalMs": 68,
+      "sound": {
+        "shot": "/audio/library/uzi/shot.ogg",
+        "loop": "/audio/library/uzi/loop.ogg",
+        "stop": "/audio/library/uzi/stop.ogg",
+        "loopDelayMs": 68,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "mk46",
+      "name": "MK-46",
+      "group": "automatic",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/mk46/shot.ogg",
+          "durationSec": 0.578
+        },
+        "loop": {
+          "url": "/audio/library/mk46/loop.ogg",
+          "durationSec": 2.9
+        },
+        "burst": {
+          "url": "/audio/library/mk46/burst.ogg",
+          "durationSec": 1.2
+        },
+        "stop": {
+          "url": "/audio/library/mk46/stop.ogg",
+          "durationSec": 0.46
+        }
+      },
+      "fireIntervalMs": 290,
+      "sound": {
+        "shot": "/audio/library/mk46/shot.ogg",
+        "loop": "/audio/library/mk46/loop.ogg",
+        "stop": "/audio/library/mk46/stop.ogg",
+        "loopDelayMs": 290,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "minigun-m134",
+      "name": "M-134 minigun",
+      "group": "rotary",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/minigun-m134/shot.ogg",
+          "durationSec": 0.309
+        },
+        "loop": {
+          "url": "/audio/library/minigun-m134/loop.ogg",
+          "durationSec": 0.27
+        },
+        "burst": {
+          "url": "/audio/library/minigun-m134/burst.ogg",
+          "durationSec": 0.742
+        },
+        "stop": {
+          "url": "/audio/library/minigun-m134/stop.ogg",
+          "durationSec": 0.278
+        }
+      },
+      "fireIntervalMs": 40,
+      "sound": {
+        "shot": "/audio/library/minigun-m134/shot.ogg",
+        "loop": "/audio/library/minigun-m134/loop.ogg",
+        "stop": "/audio/library/minigun-m134/stop.ogg",
+        "loopDelayMs": 40,
+        "attackMs": 12,
+        "releaseMs": 180,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "a10-minigun",
+      "name": "A-10 · M-134 + double echo",
+      "group": "rotary",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/a10-minigun/shot.ogg",
+          "durationSec": 0.309
+        },
+        "loop": {
+          "url": "/audio/library/a10-minigun/loop.ogg",
+          "durationSec": 0.27
+        },
+        "burst": {
+          "url": "/audio/library/a10-minigun/burst.ogg",
+          "durationSec": 0.742
+        },
+        "stop": {
+          "url": "/audio/library/a10-minigun/echo.ogg",
+          "durationSec": 5.00
+        }
+      },
+      "fireIntervalMs": 40,
+      "sound": {
+        "shot": "/audio/library/a10-minigun/shot.ogg",
+        "loop": "/audio/library/a10-minigun/loop.ogg",
+        "stop": "/audio/library/a10-minigun/echo.ogg",
+        "loopDelayMs": 40,
+        "attackMs": 12,
+        "releaseMs": 180,
+        "stopDelayMs": 400,
+        "stopAfter": "shot",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "colt-45",
+      "name": "Colt .45",
+      "group": "single",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/colt-45/shot.ogg",
+          "durationSec": 0.461
+        },
+        "mechanical": {
+          "url": "/audio/library/colt-45/mechanical.ogg",
+          "durationSec": 0.154
+        }
+      },
+      "fireIntervalMs": 360,
+      "sound": {
+        "shot": "/audio/library/colt-45/shot.ogg",
+        "loopDelayMs": 360,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "desert-eagle",
+      "name": "Desert Eagle",
+      "group": "single",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/desert-eagle/shot.ogg",
+          "durationSec": 0.461
+        },
+        "shot-1": {
+          "url": "/audio/library/desert-eagle/shot-1.ogg",
+          "durationSec": 0.253
+        },
+        "shot-2": {
+          "url": "/audio/library/desert-eagle/shot-2.ogg",
+          "durationSec": 0.251
+        }
+      },
+      "fireIntervalMs": 360,
+      "sound": {
+        "shot": "/audio/library/desert-eagle/shot.ogg",
+        "loopDelayMs": 360,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "bolt-rifle",
+      "name": "Bolt-action rifle",
+      "group": "single",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/bolt-rifle/shot.ogg",
+          "durationSec": 1.763
+        }
+      },
+      "fireIntervalMs": 800,
+      "sound": {
+        "shot": "/audio/library/bolt-rifle/shot.ogg",
+        "loopDelayMs": 800,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "remington",
+      "name": "Remington shotgun",
+      "group": "single",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/remington/shot.ogg",
+          "durationSec": 0.828
+        }
+      },
+      "fireIntervalMs": 650,
+      "sound": {
+        "shot": "/audio/library/remington/shot.ogg",
+        "loopDelayMs": 650,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "grenade-launcher",
+      "name": "Grenade launcher",
+      "group": "single",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/grenade-launcher/shot.ogg",
+          "durationSec": 0.486
+        }
+      },
+      "fireIntervalMs": 650,
+      "sound": {
+        "shot": "/audio/library/grenade-launcher/shot.ogg",
+        "loopDelayMs": 650,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "cannon",
+      "name": "Cannon",
+      "group": "single",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/cannon/shot.ogg",
+          "durationSec": 3.228
+        },
+        "ignition": {
+          "url": "/audio/library/cannon/ignition.ogg",
+          "durationSec": 0.355
+        }
+      },
+      "fireIntervalMs": 1200,
+      "sound": {
+        "shot": "/audio/library/cannon/shot.ogg",
+        "loopDelayMs": 1200,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "missile",
+      "name": "Missile fly-by",
+      "group": "missile",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/missile/shot.ogg",
+          "durationSec": 3.565
+        }
+      },
+      "fireIntervalMs": 550,
+      "sound": {
+        "shot": "/audio/library/missile/shot.ogg",
+        "loopDelayMs": 550,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 0.65,
+        "maxVoices": 8
+      }
+    },
+    {
+      "id": "rpg",
+      "name": "RPG launch",
+      "group": "missile",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/rpg/shot.ogg",
+          "durationSec": 2.538
+        }
+      },
+      "fireIntervalMs": 750,
+      "sound": {
+        "shot": "/audio/library/rpg/shot.ogg",
+        "loopDelayMs": 750,
+        "releaseMs": 12,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 8
+      }
+    },
+    {
+      "id": "keyboard",
+      "name": "Keyboard · Daz Ratatatata",
+      "group": "mechanical",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/keyboard/shot.ogg",
+          "durationSec": 0.285
+        },
+        "loop": {
+          "url": "/audio/library/keyboard/loop.ogg",
+          "durationSec": 0.17
+        },
+        "burst": {
+          "url": "/audio/library/keyboard/burst.ogg",
+          "durationSec": 0.527
+        },
+        "stop": {
+          "url": "/audio/library/keyboard/stop.ogg",
+          "durationSec": 0.237
+        }
+      },
+      "fireIntervalMs": 85,
+      "sound": {
+        "shot": "/audio/library/keyboard/shot.ogg",
+        "loop": "/audio/library/keyboard/loop.ogg",
+        "stop": "/audio/library/keyboard/stop.ogg",
+        "loopDelayMs": 85,
+        "releaseMs": 8,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    },
+    {
+      "id": "shells-50cal",
+      "name": ".50 cal shells",
+      "group": "effect",
+      "clips": {
+        "drop-1": {
+          "url": "/audio/library/shells-50cal/drop-1.ogg",
+          "durationSec": 1.58
+        },
+        "drop-2": {
+          "url": "/audio/library/shells-50cal/drop-2.ogg",
+          "durationSec": 1.61
+        },
+        "drop-3": {
+          "url": "/audio/library/shells-50cal/drop-3.ogg",
+          "durationSec": 1.2
+        },
+        "impact": {
+          "url": "/audio/library/shells-50cal/impact.ogg",
+          "durationSec": 0.29
+        }
+      }
+    },
+    {
+      "id": "bullet-flyby",
+      "name": "Bullet fly-bys",
+      "group": "effect",
+      "clips": {
+        "pass-1": {
+          "url": "/audio/library/bullet-flyby/pass-1.ogg",
+          "durationSec": 0.334
+        },
+        "pass-2": {
+          "url": "/audio/library/bullet-flyby/pass-2.ogg",
+          "durationSec": 0.42
+        },
+        "pass-3": {
+          "url": "/audio/library/bullet-flyby/pass-3.ogg",
+          "durationSec": 0.27
+        },
+        "pass-4": {
+          "url": "/audio/library/bullet-flyby/pass-4.ogg",
+          "durationSec": 0.32
+        },
+        "pass-5": {
+          "url": "/audio/library/bullet-flyby/pass-5.ogg",
+          "durationSec": 0.49
+        },
+        "pass-6": {
+          "url": "/audio/library/bullet-flyby/pass-6.ogg",
+          "durationSec": 0.39
+        },
+        "pass-7": {
+          "url": "/audio/library/bullet-flyby/pass-7.ogg",
+          "durationSec": 0.39
+        },
+        "pass-8": {
+          "url": "/audio/library/bullet-flyby/pass-8.ogg",
+          "durationSec": 0.42
+        },
+        "pass-9": {
+          "url": "/audio/library/bullet-flyby/pass-9.ogg",
+          "durationSec": 0.32
+        },
+        "sequence": {
+          "url": "/audio/library/bullet-flyby/sequence.ogg",
+          "durationSec": 6.774,
+          "segments": [
+            {
+              "start": 0,
+              "end": 0.33399999999999996
+            },
+            {
+              "start": 0.604,
+              "end": 1.024
+            },
+            {
+              "start": 1.5540000000000003,
+              "end": 1.8240000000000003
+            },
+            {
+              "start": 2.164,
+              "end": 2.484
+            },
+            {
+              "start": 2.8440000000000003,
+              "end": 3.334
+            },
+            {
+              "start": 4.034,
+              "end": 4.424
+            },
+            {
+              "start": 4.824,
+              "end": 5.214
+            },
+            {
+              "start": 5.6240000000000006,
+              "end": 6.0440000000000005
+            },
+            {
+              "start": 6.454,
+              "end": 6.774
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "metal-impact",
+      "name": "Metal impacts",
+      "group": "effect",
+      "clips": {
+        "sequence": {
+          "url": "/audio/library/metal-impact/sequence.ogg",
+          "durationSec": 0.909
+        },
+        "accent": {
+          "url": "/audio/library/metal-impact/accent.ogg",
+          "durationSec": 0.225
+        }
+      }
+    },
+    {
+      "id": "wood-impact",
+      "name": "Arrow into wood",
+      "group": "effect",
+      "clips": {
+        "impact": {
+          "url": "/audio/library/wood-impact/impact.ogg",
+          "durationSec": 0.604
+        }
+      }
+    },
+    {
+      "id": "whip",
+      "name": "Whip crack",
+      "group": "effect",
+      "clips": {
+        "crack": {
+          "url": "/audio/library/whip/crack.ogg",
+          "durationSec": 0.832
+        }
+      }
+    },
+    {
+      "id": "pistol-reload",
+      "name": "Pistol reload",
+      "group": "effect",
+      "clips": {
+        "sequence": {
+          "url": "/audio/library/pistol-reload/sequence.ogg",
+          "durationSec": 2.936
+        },
+        "click-1": {
+          "url": "/audio/library/pistol-reload/click-1.ogg",
+          "durationSec": 0.137
+        },
+        "click-2": {
+          "url": "/audio/library/pistol-reload/click-2.ogg",
+          "durationSec": 0.202
+        },
+        "click-3": {
+          "url": "/audio/library/pistol-reload/click-3.ogg",
+          "durationSec": 0.14
+        },
+        "click-4": {
+          "url": "/audio/library/pistol-reload/click-4.ogg",
+          "durationSec": 0.2
+        }
+      }
+    },
+    {
+      "id": "rifle-reload",
+      "name": "Rifle reload",
+      "group": "effect",
+      "clips": {
+        "sequence-1": {
+          "url": "/audio/library/rifle-reload/sequence-1.ogg",
+          "durationSec": 0.78
+        },
+        "sequence-2": {
+          "url": "/audio/library/rifle-reload/sequence-2.ogg",
+          "durationSec": 1.34
+        },
+        "sequence-3": {
+          "url": "/audio/library/rifle-reload/sequence-3.ogg",
+          "durationSec": 1.22
+        },
+        "accent-1": {
+          "url": "/audio/library/rifle-reload/accent-1.ogg",
+          "durationSec": 0.72
+        },
+        "accent-2": {
+          "url": "/audio/library/rifle-reload/accent-2.ogg",
+          "durationSec": 0.85
+        },
+        "accent-3": {
+          "url": "/audio/library/rifle-reload/accent-3.ogg",
+          "durationSec": 0.37
+        },
+        "accent-4": {
+          "url": "/audio/library/rifle-reload/accent-4.ogg",
+          "durationSec": 0.85
+        }
+      }
+    },
+    {
+      "id": "floppyslop",
+      "name": "Floppy Slop",
+      "group": "mechanical",
+      "clips": {
+        "shot": {
+          "url": "/audio/library/floppyslop/shot.ogg",
+          "durationSec": 1.1340833333333333
+        }
+      },
+      "fireIntervalMs": 110,
+      "sound": {
+        "shot": "/audio/library/floppyslop/shot.ogg",
+        "loopDelayMs": 110,
+        "releaseMs": 24,
+        "stopDelayMs": 0,
+        "stopAfter": "loop",
+        "gain": 1,
+        "maxVoices": 6
+      }
+    }
+  ]
+}

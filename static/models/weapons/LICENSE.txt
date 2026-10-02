@@ -1,0 +1,10 @@
+Meat Proxy original arsenal
+Copyright (c) 2026 hratio
+
+The original models, textures, and markings may be used and modified within
+Meat Proxy under the root LICENSE. Separate reuse or redistribution requires
+prior written permission from hratio.
+
+Credit: hratio — Meat Proxy
+Source: https://github.com/hratio/meat-proxy
+Procedural source code follows the software terms in the root LICENSE.

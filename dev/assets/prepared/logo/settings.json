@@ -1,0 +1,319 @@
+{
+  "introduction": {
+    "enabled": true,
+    "exitMs": 650,
+    "exitDistance": 125,
+    "entranceMs": 450,
+    "firingMs": 3500,
+    "musicFadeMs": 650
+  },
+  "portrait": "version1",
+  "openingDelay": 69850,
+  "skipTo": 69850,
+  "audio": {
+    "url": "/audio/opening/opening.ogg",
+    "enabled": true,
+    "at": 0,
+    "offset": 0,
+    "volume": 0.8,
+    "fadeIn": 0,
+    "fadeOut": 120,
+    "end": "clip",
+    "endAt": 0
+  },
+  "timing": {
+    "backgroundAt": 1175,
+    "backgroundDuration": 250,
+    "pylonLeftAt": 730,
+    "pylonLeftDuration": 300,
+    "pylonRightAt": 730,
+    "pylonRightDuration": 300,
+    "firstRingAt": 1175,
+    "firstRingDuration": 250,
+    "secondRingAt": 1602,
+    "secondRingDuration": 220,
+    "dudeAt": 2408,
+    "dudeDuration": 400,
+    "mainFrameAt": 1656,
+    "mainFrameDuration": 300,
+    "logoAt": 2056,
+    "logoDuration": 300,
+    "subtitleTextAt": 2600,
+    "subtitleTextDuration": 180,
+    "lgtmAt": 3208,
+    "lgtmDuration": 400,
+    "hold": 1150,
+    "fadeOut": 800,
+    "loopGap": 400
+  },
+  "scene": {
+    "enabled": true,
+    "speed": 6,
+    "opacity": 0.7,
+    "fadeInMs": 3700,
+    "fadeOutMs": 1600
+  },
+  "impact": 0.44,
+  "layers": {
+    "background": {
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "pylonLeft": {
+      "x": -4,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "pylonRight": {
+      "x": 4,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "firstRing": {
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "secondRing": {
+      "x": 0,
+      "y": -5,
+      "scale": 1,
+      "rotation": 0
+    },
+    "dude": {
+      "x": 1,
+      "y": -0.5,
+      "scale": 0.94,
+      "rotation": 0
+    },
+    "mainFrame": {
+      "x": 0,
+      "y": 11.4,
+      "scale": 1,
+      "rotation": 0
+    },
+    "logo": {
+      "x": 0,
+      "y": 11,
+      "scale": 1,
+      "rotation": 0
+    },
+    "subtitleText": {
+      "x": 0,
+      "y": 12.6,
+      "scale": 0.95,
+      "rotation": 0
+    },
+    "lgtm": {
+      "x": 8.2,
+      "y": -18.3,
+      "scale": 1.07,
+      "rotation": 24
+    }
+  },
+  "motion": {
+    "background": {
+      "entrance": "bottom",
+      "distance": 200,
+      "punch": 5,
+      "driftX": 0.26,
+      "driftY": 0.1
+    },
+    "pylonLeft": {
+      "entrance": "left",
+      "distance": 110,
+      "punch": 1,
+      "driftX": 0.3,
+      "driftY": 0.1
+    },
+    "pylonRight": {
+      "entrance": "right",
+      "distance": 110,
+      "punch": 1,
+      "driftX": 0.3,
+      "driftY": 0.1
+    },
+    "firstRing": {
+      "entrance": "top",
+      "distance": 100,
+      "punch": 1,
+      "driftX": 0.5,
+      "driftY": 0
+    },
+    "secondRing": {
+      "entrance": "top",
+      "distance": 110,
+      "punch": 1,
+      "driftX": 0.5,
+      "driftY": 0
+    },
+    "dude": {
+      "entrance": "stamp",
+      "distance": 110,
+      "punch": 1.5,
+      "driftX": -0.24,
+      "driftY": -0.08
+    },
+    "mainFrame": {
+      "entrance": "stamp",
+      "distance": 110,
+      "punch": 5,
+      "driftX": -0.25,
+      "driftY": -0.2
+    },
+    "logo": {
+      "entrance": "stamp",
+      "distance": 169,
+      "punch": 5,
+      "driftX": -0.25,
+      "driftY": -0.2
+    },
+    "subtitleText": {
+      "entrance": "fade",
+      "distance": 110,
+      "punch": 1.9,
+      "driftX": -0.25,
+      "driftY": -0.2
+    },
+    "lgtm": {
+      "entrance": "stamp",
+      "distance": 200,
+      "punch": 5,
+      "driftX": 0,
+      "driftY": 0
+    }
+  },
+  "drift": {
+    "start": "time",
+    "at": 3264,
+    "parts": {
+      "background": {
+        "x": 0.08,
+        "y": 0
+      },
+      "structure": {
+        "x": 0.18,
+        "y": 0
+      },
+      "dude": {
+        "x": -0.28,
+        "y": 0
+      },
+      "title": {
+        "x": -0.12,
+        "y": 0
+      },
+      "lgtm": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "color": {
+    "background": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonLeft": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonRight": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "firstRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "secondRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "dude": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -2,
+      "exposure": 0.26,
+      "contrast": 11
+    },
+    "mainFrame": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "logo": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "subtitleText": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "lgtm": {
+      "temperature": 24,
+      "amberReduction": 30,
+      "warmShift": 26,
+      "warmHue": 350,
+      "shadowBlue": 29,
+      "saturation": -7,
+      "exposure": 0.3,
+      "contrast": 4
+    }
+  }
+}

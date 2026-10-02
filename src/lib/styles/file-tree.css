@@ -1,0 +1,53 @@
+:host { color-scheme: inherit; }
+:host, :host * { cursor: default !important; }
+/* Give every ancestor one complete indent step. Trees' default guide layout
+   uses icon padding and margins; reducing its gap below those widths makes the
+   first step clamp and centers its guide differently from deeper rows. */
+[data-item-section="spacing"] {
+  padding-left: 0;
+  flex: none;
+  justify-content: flex-start;
+  margin-right: calc(-1 * var(--trees-item-row-gap));
+}
+[data-item-section="spacing-item"] {
+  box-sizing: border-box;
+  width: var(--trees-level-gap);
+  flex: none;
+  margin-right: 0;
+  transform: translateX(calc(var(--trees-icon-width) / 2 - .75px));
+}
+[data-item-section="spacing-item"] + [data-item-section="spacing-item"] { margin-left: 0; }
+[data-item-section="spacing-item"] { opacity: var(--tree-guide-opacity, .3); }
+:host(:hover) [data-item-section="spacing-item"] { opacity: .75; }
+
+[data-item-type="file"] > [data-item-section="icon"] {
+  display: var(--file-icons-display, flex);
+}
+
+/* The complete status group keeps its intrinsic width. Only the filename
+   shrinks, using Trees' existing truncation. */
+[data-item-section="content"] { flex: 1 1 auto; min-width: 0; }
+[data-item-section="decoration"],
+[data-item-section="decoration"] > span {
+  flex: none;
+  max-width: none;
+  overflow: visible;
+}
+[data-item-section="decoration"]:not(:has([data-file-indicator])) { display: none; }
+[data-tree-indicators-mount] { display: flex; flex: none; }
+/* The Svelte components live inside Trees' shadow root, so their styles belong
+   here; their tooltip content is portalled into the normal application shell. */
+[data-file-indicators] { display: flex; flex: none; align-items: center; gap: 4px; }
+[data-file-indicator] { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 14px; height: 14px; line-height: 1; }
+[data-file-indicator="finding"] { color: light-dark(#946500, #facc15); }
+[data-file-indicator="comment"] { color: light-dark(#2563eb, #60a5fa); }
+[data-file-indicator="reviewed"] { color: var(--green); }
+[data-file-indicator="git"] { color: var(--file-git-color); font-weight: 600; }
+
+/* Git presentation belongs to our Svelte status group. Preserve the matching
+   file colors without enabling Trees' Git lane or folder descendant dots. */
+[data-file-git-status] { --file-git-color: var(--muted-foreground); }
+[data-file-git-status="A"], [data-file-git-status="?"] { --file-git-color: var(--green); }
+[data-file-git-status="D"] { --file-git-color: var(--red); }
+[data-file-git-status="R"] { --file-git-color: var(--primary); }
+[data-file-git-status] > [data-item-section="content"] { color: var(--file-git-color); }

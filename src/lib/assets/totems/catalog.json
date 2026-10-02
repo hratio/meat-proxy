@@ -1,0 +1,122 @@
+[
+  {
+    "id": "T001",
+    "name": "Crown"
+  },
+  {
+    "id": "T002",
+    "name": "Magnet"
+  },
+  {
+    "id": "T003",
+    "name": "Rocket"
+  },
+  {
+    "id": "T004",
+    "name": "Fist"
+  },
+  {
+    "id": "T005",
+    "name": "Anchor"
+  },
+  {
+    "id": "T006",
+    "name": "Lightning"
+  },
+  {
+    "id": "T007",
+    "name": "Skull key"
+  },
+  {
+    "id": "T008",
+    "name": "Skull lock"
+  },
+  {
+    "id": "T009",
+    "name": "Biohazard"
+  },
+  {
+    "id": "T010",
+    "name": "Saw blade"
+  },
+  {
+    "id": "T011",
+    "name": "Cyber skull"
+  },
+  {
+    "id": "T012",
+    "name": "Flaming skull"
+  },
+  {
+    "id": "T013",
+    "name": "Bomb"
+  },
+  {
+    "id": "T014",
+    "name": "Crosshair"
+  },
+  {
+    "id": "T015",
+    "name": "Wrench"
+  },
+  {
+    "id": "T016",
+    "name": "Knife"
+  },
+  {
+    "id": "T017",
+    "name": "Hourglass"
+  },
+  {
+    "id": "T018",
+    "name": "Gear"
+  },
+  {
+    "id": "T019",
+    "name": "Fire eye"
+  },
+  {
+    "id": "T020",
+    "name": "Chain"
+  },
+  {
+    "id": "T021",
+    "name": "Cracked terminal"
+  },
+  {
+    "id": "T022",
+    "name": "Cursor"
+  },
+  {
+    "id": "T023",
+    "name": "USB skull"
+  },
+  {
+    "id": "T024",
+    "name": "Firewall"
+  },
+  {
+    "id": "T025",
+    "name": "Rune crystal"
+  },
+  {
+    "id": "T026",
+    "name": "Watchful eye"
+  },
+  {
+    "id": "T027",
+    "name": "Code forge"
+  },
+  {
+    "id": "T028",
+    "name": "Broken cable"
+  },
+  {
+    "id": "T029",
+    "name": "Memory"
+  },
+  {
+    "id": "T030",
+    "name": "Brace vortex"
+  }
+]

@@ -1,0 +1,14 @@
+Military gloves - Tan - Metahuman - Gameready
+Author: Karnaval
+Source: https://skfb.ly/oUsRT
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License URL: https://creativecommons.org/licenses/by/4.0/
+
+Meat Proxy modifications: imported the supplied COLLADA mesh; isolated one hand;
+added a 16-bone deformation rig, grip pose, and fitted wrist sleeve; prepared
+2K color, normal, and packed occlusion/roughness/metallic maps; added UV mappings
+for editable fabric lettering; converted to glTF 2.0 / GLB.
+
+The original glove mesh and textures remain under CC BY 4.0. They are not
+covered by the project's original-asset license. Retain this attribution
+when redistributing the model or a modified version.

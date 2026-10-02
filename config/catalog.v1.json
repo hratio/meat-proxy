@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "name": "Your review rules",
+  "groups": [
+    {
+      "id": "examples",
+      "name": "Examples",
+      "color": "#ed793e",
+      "codes": [
+        {
+          "id": "V001",
+          "title": "Check for missing values",
+          "description": "Check whether a lookup found a value before using it. Handle the missing case explicitly.",
+          "severity": "warning",
+          "image": 0,
+          "weapon": 3,
+          "bad": "const user = users.find(user => user.id === id);\nreturn user.email;",
+          "good": "const user = users.find(user => user.id === id);\nif (!user) throw new Error(\"User not found\");\nreturn user.email;"
+        }
+      ]
+    }
+  ]
+}

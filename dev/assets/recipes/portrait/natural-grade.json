@@ -1,0 +1,12 @@
+{
+  "adjustments": {
+    "temperature": 12,
+    "amberReduction": 45,
+    "warmShift": 0,
+    "warmHue": 0,
+    "shadowBlue": 0,
+    "saturation": -25,
+    "exposure": 0,
+    "contrast": 3
+  }
+}

@@ -1,0 +1,1718 @@
+{
+  "weapons": [
+    {
+      "id": "iron-verdict",
+      "weaponId": 1,
+      "name": "Iron Verdict",
+      "type": "Magnum revolver",
+      "description": "Graphite frame, fluted cylinder, carbon composite grip and crimson sight inserts.",
+      "url": "/models/weapons/iron-verdict.glb",
+      "triangles": 30116,
+      "vertices": 49823,
+      "drawCalls": 14,
+      "bytes": 193164,
+      "parts": [
+        "Body",
+        "Cylinder",
+        "Trigger",
+        "Hammer"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.07699999958276749,
+        -0.34700000286102295
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0400952,
+          -0.1530536,
+          0.1246821
+        ],
+        "rotation": [
+          -0.3259523,
+          0.0550068,
+          -0.1347,
+          0.9341227
+        ],
+        "scale": [
+          2.1556199,
+          2.5662143,
+          2.0786333
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 219058,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        }
+      ]
+    },
+    {
+      "id": "twin-clause",
+      "weaponId": 2,
+      "name": "Twin Clause",
+      "type": "Composite double barrel",
+      "description": "Matte black twin barrels, carbon furniture, rubber recoil pad and red receiver inlays.",
+      "url": "/models/weapons/twin-clause.glb",
+      "triangles": 36564,
+      "vertices": 61830,
+      "drawCalls": 18,
+      "bytes": 230196,
+      "parts": [
+        "Body",
+        "BreakAction",
+        "Trigger"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.06199999898672104,
+        -0.6570000052452087
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0152044,
+          -0.1669926,
+          0.153787
+        ],
+        "rotation": [
+          -0.3220828,
+          0.1843796,
+          -0.2283618,
+          0.9000654
+        ],
+        "scale": [
+          1.9091899,
+          2.272845,
+          1.8416191
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 292196,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        }
+      ]
+    },
+    {
+      "id": "rhein-9",
+      "weaponId": 3,
+      "name": "Rhein-9",
+      "type": "SMG + combat optic",
+      "description": "Black ceramic receiver, ribbed rubber fore-end, clear combat optic and crimson controls.",
+      "url": "/models/weapons/rhein-9.glb",
+      "triangles": 34060,
+      "vertices": 54744,
+      "drawCalls": 13,
+      "bytes": 208340,
+      "parts": [
+        "Body",
+        "Trigger",
+        "Magazine",
+        "Bolt"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.041999999433755875,
+        -0.4480000138282776
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0027993,
+          -0.1486827,
+          0.1370422
+        ],
+        "rotation": [
+          -0.3484548,
+          0.1530333,
+          -0.2006087,
+          0.9027271
+        ],
+        "scale": [
+          1.7196614,
+          2.0472159,
+          1.6587982
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 256332,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        }
+      ]
+    },
+    {
+      "id": "stack-10",
+      "weaponId": 4,
+      "name": "Stack-10",
+      "type": "Compact machine pistol",
+      "description": "Matte folded shell, rubber grip, swept magazine and a red-banded muzzle shroud.",
+      "url": "/models/weapons/stack-10.glb",
+      "triangles": 34420,
+      "vertices": 59566,
+      "drawCalls": 14,
+      "bytes": 234272,
+      "parts": [
+        "Body",
+        "Trigger",
+        "Magazine",
+        "Bolt"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.07100000232458115,
+        -0.367000013589859
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0293615,
+          -0.1356189,
+          -0.000954
+        ],
+        "rotation": [
+          -0.3615354,
+          0.1409188,
+          -0.1434015,
+          0.910423
+        ],
+        "scale": [
+          2.0825927,
+          2.4792774,
+          2.008215
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 282264,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        }
+      ]
+    },
+    {
+      "id": "ak-256",
+      "weaponId": 5,
+      "name": "AK-256",
+      "type": "Cryptographic rifle",
+      "description": "Carbon composite furniture, graphite receiver and a flush SHA-256 inspection plate.",
+      "url": "/models/weapons/ak-256.glb",
+      "triangles": 50472,
+      "vertices": 83176,
+      "drawCalls": 14,
+      "bytes": 307232,
+      "parts": [
+        "Body",
+        "Trigger",
+        "Magazine",
+        "Bolt"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.04800000041723251,
+        -0.6800000071525574
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0125044,
+          -0.1354832,
+          0.1184418
+        ],
+        "rotation": [
+          -0.3101507,
+          0.1250206,
+          -0.1488373,
+          0.930604
+        ],
+        "scale": [
+          2.1407297,
+          2.5484877,
+          2.0649638
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 368556,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        }
+      ]
+    },
+    {
+      "id": "elastic-saw",
+      "weaponId": 6,
+      "name": "Elastic SAW",
+      "type": "Cloud compute support",
+      "description": "Guided compute-cell belt, black server armor, red status lights and a braced bipod.",
+      "url": "/models/weapons/elastic-saw.glb",
+      "triangles": 63696,
+      "vertices": 112296,
+      "drawCalls": 13,
+      "bytes": 376044,
+      "parts": [
+        "Body",
+        "Trigger",
+        "Magazine"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.08299999684095383,
+        -0.7020000219345093
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0448916,
+          -0.1516399,
+          0.1451834
+        ],
+        "rotation": [
+          -0.3689207,
+          0.023546,
+          -0.1595092,
+          0.9153687
+        ],
+        "scale": [
+          2.0058501,
+          2.387917,
+          1.9348584
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 424712,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        }
+      ]
+    },
+    {
+      "id": "brrrt-10",
+      "weaponId": 7,
+      "name": "BRRRT-10",
+      "type": "Hand-held attack plane",
+      "description": "Carbon wings, charcoal airframe, smoked canopy and crimson engine collars.",
+      "url": "/models/weapons/brrrt-10.glb",
+      "triangles": 70746,
+      "vertices": 87668,
+      "drawCalls": 16,
+      "bytes": 342796,
+      "parts": [
+        "Body",
+        "BarrelCluster",
+        "Trigger"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        -0.035,
+        -0.773
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0131491,
+          -0.1941867,
+          -0.0314818
+        ],
+        "rotation": [
+          -0.2231609,
+          0.0747328,
+          -0.2521594,
+          0.9386319
+        ],
+        "scale": [
+          2.0290418,
+          2.0290418,
+          2.0290418
+        ],
+        "hand": "right"
+      },
+      "downloadBytes": 406792,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-airframe-albedo-lossy-55.webp",
+          "bytes": 800
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-airframe-roughness-lossy-55.webp",
+          "bytes": 1196
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        }
+      ]
+    },
+    {
+      "id": "heavenfire-67",
+      "weaponId": 8,
+      "name": "Heavenfire AH-67",
+      "type": "Attack handcopter",
+      "description": "Matte composite hull, carbon rotor, smoked canopy and a clear shrouded tail fan.",
+      "url": "/models/weapons/heavenfire-67.glb",
+      "triangles": 35856,
+      "vertices": 58380,
+      "drawCalls": 17,
+      "bytes": 228200,
+      "parts": [
+        "Body",
+        "TailRotor",
+        "Rotor",
+        "Trigger"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        -0.13,
+        -0.478
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0058878,
+          -0.1861789,
+          0.0372535
+        ],
+        "rotation": [
+          -0.2666317,
+          0.188808,
+          -0.2550558,
+          0.910058
+        ],
+        "scale": [
+          1.9819573,
+          1.9819574,
+          1.9819573
+        ],
+        "hand": "right"
+      },
+      "downloadBytes": 290200,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        }
+      ]
+    },
+    {
+      "id": "daz-ratatat",
+      "weaponId": 9,
+      "name": "Daz Ratatatata",
+      "type": "Mechanical keyboard",
+      "description": "Graphite keycaps, red command keys, rubber feet and a restrained crimson underglow.",
+      "url": "/models/weapons/daz-ratatat.glb",
+      "triangles": 154070,
+      "vertices": 297047,
+      "drawCalls": 72,
+      "bytes": 1131508,
+      "parts": [
+        "Body",
+        "Key_Escape",
+        "Key_Digit1",
+        "Key_Digit2",
+        "Key_Digit3",
+        "Key_Digit4",
+        "Key_Digit5",
+        "Key_Digit6",
+        "Key_Digit7",
+        "Key_Digit8",
+        "Key_Digit9",
+        "Key_Digit0",
+        "Key_Minus",
+        "Key_Equal",
+        "Key_Backspace",
+        "Key_Tab",
+        "Key_KeyQ",
+        "Key_KeyW",
+        "Key_KeyE",
+        "Key_KeyR",
+        "Key_KeyT",
+        "Key_KeyY",
+        "Key_KeyU",
+        "Key_KeyI",
+        "Key_KeyO",
+        "Key_KeyP",
+        "Key_BracketLeft",
+        "Key_BracketRight",
+        "Key_Backslash",
+        "Key_CapsLock",
+        "Key_KeyA",
+        "Key_KeyS",
+        "Key_KeyD",
+        "Key_KeyF",
+        "Key_KeyG",
+        "Key_KeyH",
+        "Key_KeyJ",
+        "Key_KeyK",
+        "Key_KeyL",
+        "Key_Semicolon",
+        "Key_Quote",
+        "Key_Enter",
+        "Key_ShiftLeft",
+        "Key_KeyZ",
+        "Key_KeyX",
+        "Key_KeyC",
+        "Key_KeyV",
+        "Key_KeyB",
+        "Key_KeyN",
+        "Key_KeyM",
+        "Key_Comma",
+        "Key_Period",
+        "Key_Slash",
+        "Key_ShiftRight",
+        "Key_ControlLeft",
+        "Key_MetaLeft",
+        "Key_AltLeft",
+        "Key_Space",
+        "Key_AltRight",
+        "Key_MetaRight",
+        "Key_ContextMenu",
+        "Key_ControlRight"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.009,
+        -0.378
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0421272,
+          0.0966014,
+          -0.1410638
+        ],
+        "rotation": [
+          -0.4070117,
+          0.8212383,
+          0.2574323,
+          0.3060029
+        ],
+        "scale": [
+          1.7186241,
+          1.7186242,
+          1.7186244
+        ],
+        "hand": "left"
+      },
+      "downloadBytes": 1180302,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-pcb-albedo-lossy-55.webp",
+          "bytes": 802
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        }
+      ]
+    },
+    {
+      "id": "merge-obliterator",
+      "weaponId": 10,
+      "name": "Merge Obliterator 9000",
+      "type": "Code review energy cannon",
+      "description": "Black reactor armor, crimson coils, rubber conduits and a mounted review terminal.",
+      "url": "/models/weapons/merge-obliterator.glb",
+      "triangles": 77074,
+      "vertices": 119044,
+      "drawCalls": 14,
+      "bytes": 447852,
+      "parts": [
+        "Body",
+        "Trigger",
+        "Core"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.07999999821186066,
+        -0.47999998927116394
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0135651,
+          -0.175396,
+          0.2081795
+        ],
+        "rotation": [
+          -0.3132444,
+          0.1966596,
+          -0.2385164,
+          0.8979493
+        ],
+        "scale": [
+          2.1319501,
+          2.5380356,
+          2.055809
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 509852,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        }
+      ]
+    },
+    {
+      "id": "auto-bmg",
+      "weaponId": 11,
+      "name": "Auto-BMG",
+      "type": "Heavy bolt-action rifle",
+      "description": "A colossal self-cycling bolt rifle: fluted graphite barrel, carbon stock, crimson hardware and a coated long-range scope.",
+      "url": "/models/weapons/auto-bmg.glb",
+      "triangles": 66158,
+      "vertices": 144994,
+      "drawCalls": 19,
+      "bytes": 434592,
+      "parts": [
+        "Body",
+        "Trigger",
+        "Bolt",
+        "Magazine",
+        "ScopeObjective",
+        "ScopeOcular"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.06199999898672104,
+        -1.2899999618530273
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0125044,
+          -0.1354832,
+          0.1684418
+        ],
+        "rotation": [
+          -0.3101507,
+          0.1250206,
+          -0.1488373,
+          0.930604
+        ],
+        "scale": [
+          2.1407297,
+          2.5484877,
+          2.0649638
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 495916,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        }
+      ]
+    },
+    {
+      "id": "slopdisk",
+      "weaponId": 12,
+      "name": "Sloppydisk",
+      "type": "Twin-feed floppy launcher",
+      "description": "Twenty-eight disks. Zero useful data. Angled twin glass magazines, visible pickup drives and clear pull-cord lids feed a transparent accelerator.",
+      "url": "/models/weapons/slopdisk.glb",
+      "triangles": 117652,
+      "vertices": 248423,
+      "drawCalls": 75,
+      "bytes": 913504,
+      "parts": [
+        "Body",
+        "Trigger",
+        "GlassBarrelTop",
+        "GlassBarrelBottom",
+        "GlassBarrelWall-1",
+        "GlassBarrelWall1",
+        "ChamberDisk",
+        "GlassFeedL-0.124",
+        "GlassFeedL0.124",
+        "GlassMagLRear",
+        "GlassMagLFront",
+        "GlassMagLInner",
+        "GlassMagLOuter",
+        "GlassLidL",
+        "PullCordL",
+        "Disk_L_00",
+        "Disk_L_01",
+        "Disk_L_02",
+        "Disk_L_03",
+        "Disk_L_04",
+        "Disk_L_05",
+        "Disk_L_06",
+        "Disk_L_07",
+        "Disk_L_08",
+        "Disk_L_09",
+        "Disk_L_10",
+        "Disk_L_11",
+        "Disk_L_12",
+        "Disk_L_13",
+        "FeedDiskL",
+        "GlassFeedR-0.124",
+        "GlassFeedR0.124",
+        "GlassMagRRear",
+        "GlassMagRFront",
+        "GlassMagRInner",
+        "GlassMagROuter",
+        "GlassLidR",
+        "PullCordR",
+        "Disk_R_00",
+        "Disk_R_01",
+        "Disk_R_02",
+        "Disk_R_03",
+        "Disk_R_04",
+        "Disk_R_05",
+        "Disk_R_06",
+        "Disk_R_07",
+        "Disk_R_08",
+        "Disk_R_09",
+        "Disk_R_10",
+        "Disk_R_11",
+        "Disk_R_12",
+        "Disk_R_13",
+        "FeedDiskR",
+        "ScopeOcular",
+        "ScopeObjective",
+        "CRTDisplay",
+        "CRTGlass",
+        "NeonLegendL",
+        "NeonLegendR"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor"
+      ],
+      "muzzle": [
+        0,
+        0.04399999976158142,
+        -1.0399999618530273
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0125044,
+          -0.1254832,
+          0.1684418
+        ],
+        "rotation": [
+          -0.3101507,
+          0.1250206,
+          -0.1488373,
+          0.930604
+        ],
+        "scale": [
+          2.1407297,
+          2.5484877,
+          2.0649638
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 1022424,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/sloppydisk-crt-screen-lossy-55.webp",
+          "bytes": 47596
+        }
+      ]
+    },
+    {
+      "id": "flaky-assertions",
+      "weaponId": 13,
+      "name": "Flaky Assertions",
+      "type": "Quad flak cannon",
+      "description": "Four independently recoiling barrels, vented brakes, armored cradle, exposed spring returns and a traverse mount. Tests may pass. Targets will not.",
+      "url": "/models/weapons/flaky-assertions.glb",
+      "triangles": 114588,
+      "vertices": 207430,
+      "drawCalls": 32,
+      "bytes": 719360,
+      "parts": [
+        "Body",
+        "Barrel0",
+        "Barrel1",
+        "Barrel2",
+        "Barrel3",
+        "Trigger"
+      ],
+      "sockets": [
+        "Muzzle",
+        "Grip",
+        "Eject",
+        "HandAnchor",
+        "Muzzle0",
+        "Muzzle1",
+        "Muzzle2",
+        "Muzzle3",
+        "Eject0",
+        "Eject1",
+        "Eject2",
+        "Eject3"
+      ],
+      "muzzle": [
+        0.1899999976158142,
+        0.5199999809265137,
+        -1.4240000247955322
+      ],
+      "handAnchor": {
+        "translation": [
+          0.0125044,
+          -0.0904832,
+          0.4584418
+        ],
+        "rotation": [
+          -0.3101507,
+          0.1250206,
+          -0.1488373,
+          0.930604
+        ],
+        "scale": [
+          2.1407297,
+          2.5484877,
+          2.0649638
+        ],
+        "hand": "right"
+      },
+      "primaryHand": "right",
+      "downloadBytes": 781360,
+      "textures": [
+        {
+          "url": "/models/textures/arsenal-pbr-brushed-metal-normal-lossy-55.webp",
+          "bytes": 622
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-albedo-lossy-55.webp",
+          "bytes": 652
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-steel-roughness-lossy-55.webp",
+          "bytes": 1416
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-albedo-lossy-55.webp",
+          "bytes": 748
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-titanium-roughness-lossy-55.webp",
+          "bytes": 1420
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-albedo-lossy-55.webp",
+          "bytes": 658
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-edge-roughness-lossy-55.webp",
+          "bytes": 1522
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-ceramic-paint-normal-lossy-55.webp",
+          "bytes": 616
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-albedo-lossy-55.webp",
+          "bytes": 880
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-red-roughness-lossy-55.webp",
+          "bytes": 1326
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-black-albedo-lossy-55.webp",
+          "bytes": 770
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-roughness-lossy-55.webp",
+          "bytes": 1256
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-armor-albedo-lossy-55.webp",
+          "bytes": 676
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-twill-normal-lossy-55.webp",
+          "bytes": 8298
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-albedo-lossy-55.webp",
+          "bytes": 1064
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-carbon-roughness-lossy-55.webp",
+          "bytes": 3970
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-molded-polymer-normal-lossy-55.webp",
+          "bytes": 34186
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-albedo-lossy-55.webp",
+          "bytes": 708
+        },
+        {
+          "url": "/models/textures/arsenal-pbr-rubber-roughness-lossy-55.webp",
+          "bytes": 1212
+        }
+      ]
+    }
+  ]
+}

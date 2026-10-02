@@ -1,0 +1,121 @@
+/* Palette swatches always show their original preset, independent of personal overrides. */
+:root, [data-theme] { --shell-tint: initial; --shell-accent: initial; --shell-on-accent: initial; }
+
+/* Complete shell palettes. The same attribute also paints theme-picker swatches.
+   Diff syntax themes and gameplay artwork retain their own color systems. */
+:root, [data-theme='bunker'] {
+  color-scheme: dark;
+  --background: color-mix(in srgb, #11120f 82%, var(--shell-tint, #11120f) 18%);
+  --foreground: #e0e2d8;
+  --card: color-mix(in srgb, #191c16 82%, var(--shell-tint, #191c16) 18%);
+  --popover: color-mix(in srgb, #20251b 82%, var(--shell-tint, #20251b) 18%);
+  --primary: var(--shell-accent, #e9aa59);
+  --primary-foreground: var(--shell-on-accent, #211608);
+  --secondary: color-mix(in srgb, #262c21 82%, var(--shell-tint, #262c21) 18%);
+  --muted-surface: color-mix(in srgb, #23291e 82%, var(--shell-tint, #23291e) 18%);
+  --muted-foreground: #b1baa5;
+  --interactive-surface: color-mix(in srgb, #333b2c 82%, var(--shell-tint, #333b2c) 18%);
+  --border: --alpha(var(--foreground) / 8%);
+  --input: --alpha(var(--muted-foreground) / 20%);
+  --destructive: #f09289;
+  --destructive-foreground: #300d0a;
+  --success: #a6c795;
+  --warning: #e5c576;
+  --chart-3: #a6bada;
+  --chart-4: #c4aaeb;
+  --ui-tint: var(--shell-tint, #99b58b);
+}
+
+[data-theme='slate'] {
+  color-scheme: dark;
+  --background: color-mix(in srgb, #17202c 82%, var(--shell-tint, #17202c) 18%);
+  --foreground: #e2eaf4;
+  --card: color-mix(in srgb, #202b3a 82%, var(--shell-tint, #202b3a) 18%);
+  --popover: color-mix(in srgb, #263344 82%, var(--shell-tint, #263344) 18%);
+  --primary: var(--shell-accent, #7dc9ec);
+  --primary-foreground: var(--shell-on-accent, #0c2738);
+  --secondary: color-mix(in srgb, #2c3b4e 82%, var(--shell-tint, #2c3b4e) 18%);
+  --muted-surface: color-mix(in srgb, #293749 82%, var(--shell-tint, #293749) 18%);
+  --muted-foreground: #b1c2d7;
+  --interactive-surface: color-mix(in srgb, #384c63 82%, var(--shell-tint, #384c63) 18%);
+  --border: --alpha(var(--foreground) / 8%);
+  --input: --alpha(var(--muted-foreground) / 20%);
+  --destructive: #ffa09e;
+  --destructive-foreground: #380e13;
+  --success: #99d5b2;
+  --warning: #e6c58b;
+  --chart-3: #c3b0f0;
+  --chart-4: #e9b18f;
+  --ui-tint: var(--shell-tint, #829bb9);
+}
+
+[data-theme='ember'] {
+  color-scheme: dark;
+  --background: color-mix(in srgb, #1c1716 82%, var(--shell-tint, #1c1716) 18%);
+  --foreground: #f0e3dd;
+  --card: color-mix(in srgb, #28211f 82%, var(--shell-tint, #28211f) 18%);
+  --popover: color-mix(in srgb, #302725 82%, var(--shell-tint, #302725) 18%);
+  --primary: var(--shell-accent, #f29b85);
+  --primary-foreground: var(--shell-on-accent, #32160e);
+  --secondary: color-mix(in srgb, #392e2a 82%, var(--shell-tint, #392e2a) 18%);
+  --muted-surface: color-mix(in srgb, #352b28 82%, var(--shell-tint, #352b28) 18%);
+  --muted-foreground: #c9b4aa;
+  --interactive-surface: color-mix(in srgb, #483832 82%, var(--shell-tint, #483832) 18%);
+  --border: --alpha(var(--foreground) / 8%);
+  --input: --alpha(var(--muted-foreground) / 20%);
+  --destructive: #ff9ba5;
+  --destructive-foreground: #370e15;
+  --success: #b5ca94;
+  --warning: #e8c589;
+  --chart-3: #a1c5d6;
+  --chart-4: #c4afe4;
+  --ui-tint: var(--shell-tint, #b99589);
+}
+
+/* The original custom tint (14, 13, 12) and accent (193, 80, 68),
+   with light labels on solid red controls. */
+[data-theme='oxide'] {
+  color-scheme: dark;
+  --background: color-mix(in srgb, #111010 82%, var(--shell-tint, #111010) 18%);
+  --foreground: #d5d1d2;
+  --card: color-mix(in srgb, #171515 82%, var(--shell-tint, #171515) 18%);
+  --popover: color-mix(in srgb, #1d1c1b 82%, var(--shell-tint, #1d1c1b) 18%);
+  --primary: var(--shell-accent, #c15044);
+  --primary-foreground: var(--shell-on-accent, #ffffff);
+  --secondary: color-mix(in srgb, #282625 82%, var(--shell-tint, #282625) 18%);
+  --muted-surface: color-mix(in srgb, #252322 82%, var(--shell-tint, #252322) 18%);
+  --muted-foreground: #b3aeac;
+  --interactive-surface: color-mix(in srgb, #2b2928 82%, var(--shell-tint, #2b2928) 18%);
+  --border: --alpha(var(--foreground) / 8%);
+  --input: --alpha(var(--muted-foreground) / 20%);
+  --destructive: #d47a70;
+  --destructive-foreground: #180f0e;
+  --success: #99b58b;
+  --warning: #bda170;
+  --chart-3: #98a7c1;
+  --chart-4: #bca99a;
+  --ui-tint: var(--shell-tint, #0e0d0c);
+}
+
+[data-theme='midnight'] {
+  color-scheme: dark;
+  --background: color-mix(in srgb, #0b0c13 82%, var(--shell-tint, #0b0c13) 18%);
+  --foreground: #e7e5f3;
+  --card: color-mix(in srgb, #141620 82%, var(--shell-tint, #141620) 18%);
+  --popover: color-mix(in srgb, #1c1e2b 82%, var(--shell-tint, #1c1e2b) 18%);
+  --primary: var(--shell-accent, #bca6f5);
+  --primary-foreground: var(--shell-on-accent, #211438);
+  --secondary: color-mix(in srgb, #252739 82%, var(--shell-tint, #252739) 18%);
+  --muted-surface: color-mix(in srgb, #202232 82%, var(--shell-tint, #202232) 18%);
+  --muted-foreground: #b2b0c9;
+  --interactive-surface: color-mix(in srgb, #33364c 82%, var(--shell-tint, #33364c) 18%);
+  --border: --alpha(var(--foreground) / 8%);
+  --input: --alpha(var(--muted-foreground) / 20%);
+  --destructive: #f49cac;
+  --destructive-foreground: #350e19;
+  --success: #99d0b5;
+  --warning: #e0c88d;
+  --chart-3: #95c7ed;
+  --chart-4: #e5a6d1;
+  --ui-tint: var(--shell-tint, #9d93be);
+}

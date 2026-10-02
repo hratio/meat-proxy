@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "gapMs": {
+      "default": 0,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 600000
+    },
+    "gain": {
+      "default": 1,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2
+    },
+    "categories": {
+      "default": [],
+      "maxItems": 64,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "clips": {
+      "default": [],
+      "maxItems": 256,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "category": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 2000,
+            "pattern": "^(\\/(?!\\/)|https?:\\/\\/)"
+          },
+          "enabled": {
+            "default": true,
+            "type": "boolean"
+          },
+          "durationSec": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 600
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 1200
+          },
+          "gain": {
+            "default": 1,
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "category",
+          "url"
+        ]
+      }
+    }
+  }
+}

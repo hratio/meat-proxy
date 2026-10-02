@@ -1,0 +1,475 @@
+{
+  "introduction": {
+    "enabled": true,
+    "exitMs": 650,
+    "exitDistance": 125,
+    "entranceMs": 450,
+    "firingMs": 3500,
+    "musicFadeMs": 650
+  },
+  "portrait": "version1",
+  "openingDelay": 69850,
+  "skipTo": 69850,
+  "audio": {
+    "url": "/audio/opening/opening.ogg",
+    "enabled": true,
+    "at": 0,
+    "offset": 0,
+    "volume": 0.8,
+    "fadeIn": 0,
+    "fadeOut": 120,
+    "end": "clip",
+    "endAt": 0
+  },
+  "subtitles": {
+    "enabled": true,
+    "font": "inter",
+    "fontSize": 14,
+    "color": "#c6cbd1",
+    "opacity": 0.72,
+    "tracking": 0.025,
+    "bottom": 5.5,
+    "offsetMs": 0,
+    "cues": [
+      {
+        "id": "voice-01",
+        "text": "Programming is dead.",
+        "startMs": 140,
+        "endMs": 1960
+      },
+      {
+        "id": "voice-02",
+        "text": "The corporate overlords put gods in the server racks.",
+        "startMs": 4120,
+        "endMs": 7300
+      },
+      {
+        "id": "voice-03",
+        "text": "Told us to call it progress.",
+        "startMs": 7900,
+        "endMs": 9820
+      },
+      {
+        "id": "voice-04",
+        "text": "We used to build things.",
+        "startMs": 10420,
+        "endMs": 12180
+      },
+      {
+        "id": "voice-05",
+        "text": "Now, we prompt.",
+        "startMs": 12420,
+        "endMs": 14300
+      },
+      {
+        "id": "voice-06",
+        "text": "We wait.",
+        "startMs": 14600,
+        "endMs": 15420
+      },
+      {
+        "id": "voice-07",
+        "text": "We review the damage.",
+        "startMs": 15660,
+        "endMs": 17200
+      },
+      {
+        "id": "voice-08",
+        "text": "A thousand lines of God knows what for a ten-line problem.",
+        "startMs": 17260,
+        "endMs": 21180
+      },
+      {
+        "id": "voice-09",
+        "text": "Here we sit, scolded by the fluorescent lights,",
+        "startMs": 22780,
+        "endMs": 25980
+      },
+      {
+        "id": "voice-10",
+        "text": "monitoring our token usage,",
+        "startMs": 26320,
+        "endMs": 28040
+      },
+      {
+        "id": "voice-11",
+        "text": "praying for a weekly usage reset.",
+        "startMs": 28480,
+        "endMs": 30780
+      },
+      {
+        "id": "voice-12",
+        "text": "If only the agents cared about what we have to say.",
+        "startMs": 32480,
+        "endMs": 36400
+      },
+      {
+        "id": "voice-13",
+        "text": "All upstairs tells us is that",
+        "startMs": 36840,
+        "endMs": 38700
+      },
+      {
+        "id": "voice-14",
+        "text": "it's just a skill issue.",
+        "startMs": 38720,
+        "endMs": 40100
+      },
+      {
+        "id": "voice-15",
+        "text": "There is a new skill library with over 100,000 stars on GitHub.",
+        "startMs": 40120,
+        "endMs": 44560
+      },
+      {
+        "id": "voice-16",
+        "text": "Have you checked that out?",
+        "startMs": 44600,
+        "endMs": 46320
+      },
+      {
+        "id": "voice-17",
+        "text": "Pfft, like that would solve any of the shit we deal with.",
+        "startMs": 46540,
+        "endMs": 49800
+      },
+      {
+        "id": "voice-18",
+        "text": "Meat proxies.",
+        "startMs": 50760,
+        "endMs": 51800
+      },
+      {
+        "id": "voice-19",
+        "text": "That's what we've become.",
+        "startMs": 52140,
+        "endMs": 53380
+      },
+      {
+        "id": "voice-20",
+        "text": "Just enough human left to take the blame.",
+        "startMs": 53740,
+        "endMs": 55840
+      },
+      {
+        "id": "voice-21",
+        "text": "I'm done leaving polite little comments.",
+        "startMs": 58000,
+        "endMs": 60080
+      },
+      {
+        "id": "voice-22",
+        "text": "Buckle up, boys.",
+        "startMs": 64060,
+        "endMs": 65200
+      },
+      {
+        "id": "voice-23",
+        "text": "We're going in.",
+        "startMs": 65300,
+        "endMs": 66360
+      },
+      {
+        "id": "voice-24",
+        "text": "Line by line.",
+        "startMs": 69120,
+        "endMs": 70560
+      }
+    ]
+  },
+  "timing": {
+    "backgroundAt": 1175,
+    "backgroundDuration": 250,
+    "pylonLeftAt": 730,
+    "pylonLeftDuration": 300,
+    "pylonRightAt": 730,
+    "pylonRightDuration": 300,
+    "firstRingAt": 1175,
+    "firstRingDuration": 250,
+    "secondRingAt": 1602,
+    "secondRingDuration": 220,
+    "dudeAt": 2408,
+    "dudeDuration": 400,
+    "mainFrameAt": 1656,
+    "mainFrameDuration": 300,
+    "logoAt": 2056,
+    "logoDuration": 300,
+    "subtitleTextAt": 2600,
+    "subtitleTextDuration": 180,
+    "lgtmAt": 3208,
+    "lgtmDuration": 400,
+    "hold": 1150,
+    "fadeOut": 800,
+    "loopGap": 400
+  },
+  "scene": {
+    "enabled": true,
+    "speed": 6,
+    "opacity": 0.7,
+    "fadeInMs": 3700,
+    "fadeOutMs": 1600
+  },
+  "impact": 0.44,
+  "layers": {
+    "background": {
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "pylonLeft": {
+      "x": -4,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "pylonRight": {
+      "x": 4,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "firstRing": {
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "rotation": 0
+    },
+    "secondRing": {
+      "x": 0,
+      "y": -5,
+      "scale": 1,
+      "rotation": 0
+    },
+    "dude": {
+      "x": 1,
+      "y": -0.5,
+      "scale": 0.94,
+      "rotation": 0
+    },
+    "mainFrame": {
+      "x": 0,
+      "y": 11.4,
+      "scale": 1,
+      "rotation": 0
+    },
+    "logo": {
+      "x": 0,
+      "y": 11,
+      "scale": 1,
+      "rotation": 0
+    },
+    "subtitleText": {
+      "x": 0,
+      "y": 12.6,
+      "scale": 0.95,
+      "rotation": 0
+    },
+    "lgtm": {
+      "x": 8.2,
+      "y": -18.3,
+      "scale": 1.07,
+      "rotation": 24
+    }
+  },
+  "motion": {
+    "background": {
+      "entrance": "bottom",
+      "distance": 200,
+      "punch": 5,
+      "driftX": 0.26,
+      "driftY": 0.1
+    },
+    "pylonLeft": {
+      "entrance": "left",
+      "distance": 110,
+      "punch": 1,
+      "driftX": 0.3,
+      "driftY": 0.1
+    },
+    "pylonRight": {
+      "entrance": "right",
+      "distance": 110,
+      "punch": 1,
+      "driftX": 0.3,
+      "driftY": 0.1
+    },
+    "firstRing": {
+      "entrance": "top",
+      "distance": 100,
+      "punch": 1,
+      "driftX": 0.5,
+      "driftY": 0
+    },
+    "secondRing": {
+      "entrance": "top",
+      "distance": 110,
+      "punch": 1,
+      "driftX": 0.5,
+      "driftY": 0
+    },
+    "dude": {
+      "entrance": "stamp",
+      "distance": 110,
+      "punch": 1.5,
+      "driftX": -0.24,
+      "driftY": -0.08
+    },
+    "mainFrame": {
+      "entrance": "stamp",
+      "distance": 110,
+      "punch": 5,
+      "driftX": -0.25,
+      "driftY": -0.2
+    },
+    "logo": {
+      "entrance": "stamp",
+      "distance": 169,
+      "punch": 5,
+      "driftX": -0.25,
+      "driftY": -0.2
+    },
+    "subtitleText": {
+      "entrance": "fade",
+      "distance": 110,
+      "punch": 1.9,
+      "driftX": -0.25,
+      "driftY": -0.2
+    },
+    "lgtm": {
+      "entrance": "stamp",
+      "distance": 200,
+      "punch": 5,
+      "driftX": 0,
+      "driftY": 0
+    }
+  },
+  "drift": {
+    "start": "time",
+    "at": 3264,
+    "parts": {
+      "background": {
+        "x": 0.08,
+        "y": 0
+      },
+      "structure": {
+        "x": 0.18,
+        "y": 0
+      },
+      "dude": {
+        "x": -0.28,
+        "y": 0
+      },
+      "title": {
+        "x": -0.12,
+        "y": 0
+      },
+      "lgtm": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "color": {
+    "background": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonLeft": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonRight": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "firstRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "secondRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "dude": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -2,
+      "exposure": 0.26,
+      "contrast": 11
+    },
+    "mainFrame": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "logo": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "subtitleText": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "lgtm": {
+      "temperature": 24,
+      "amberReduction": 30,
+      "warmShift": 26,
+      "warmHue": 350,
+      "shadowBlue": 29,
+      "saturation": -7,
+      "exposure": 0.3,
+      "contrast": 4
+    }
+  }
+}

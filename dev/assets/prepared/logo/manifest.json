@@ -1,0 +1,145 @@
+{
+  "format": "meat-proxy/splash2-color-bake",
+  "quality": 60,
+  "alphaQuality": 100,
+  "colors": {
+    "background": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonLeft": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "pylonRight": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "firstRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "secondRing": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "mainFrame": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "logo": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "subtitleText": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -9,
+      "exposure": 0.16,
+      "contrast": 16
+    },
+    "lgtm": {
+      "temperature": 24,
+      "amberReduction": 30,
+      "warmShift": 26,
+      "warmHue": 350,
+      "shadowBlue": 29,
+      "saturation": -7,
+      "exposure": 0.3,
+      "contrast": 4
+    },
+    "dude": {
+      "temperature": -6,
+      "amberReduction": 40,
+      "warmShift": 17,
+      "warmHue": 350,
+      "shadowBlue": 23,
+      "saturation": -2,
+      "exposure": 0.26,
+      "contrast": 11
+    }
+  },
+  "assets": [
+    {
+      "name": "logo/meat",
+      "layer": "logo",
+      "width": 282,
+      "height": 112,
+      "webpWidth": 180,
+      "webpHeight": 71,
+      "sourceSha256": "70f1da861c0438333a2cf02c6c781677e3c45a124c95f55694d553dd036bc598",
+      "pngBytes": 48873,
+      "webpBytes": 4642,
+      "sourcePngSha256": "c84b0b6c5bfab30f91165a15ddd549f0d0cf3065b16cd02a5a95d3466238137f"
+    },
+    {
+      "name": "logo/head",
+      "layer": "dude",
+      "width": 91,
+      "height": 100,
+      "webpWidth": 91,
+      "webpHeight": 100,
+      "sourceSha256": "68ede50adddd2743162b9a0970b657899e905899a8a40caeaa95f3022afe0464",
+      "pngBytes": 23570,
+      "webpBytes": 6104,
+      "sourcePngSha256": "3b1c153e1a6d96982c2a676f58963997ae203ea316166739f1bb6299c0297f48"
+    },
+    {
+      "name": "logo/proxy",
+      "layer": "logo",
+      "width": 340,
+      "height": 114,
+      "webpWidth": 216,
+      "webpHeight": 72,
+      "sourceSha256": "e22ea6a944fa8400c72a196c31e48d5315300f18b3b844437391eca09a4f414d",
+      "pngBytes": 63001,
+      "webpBytes": 6180,
+      "sourcePngSha256": "621b82f3df92a3ab10137adc918a16ec9ed0eb9eb6fb373ffbaf1a11da5b1b8f"
+    }
+  ]
+}

@@ -1,0 +1,875 @@
+{
+  "game": {
+    "hud": {
+      "bottom": 0,
+      "holsteredPeek": 0,
+      "iconSize": 37,
+      "iconStyle": "catalog",
+      "leftWeight": 1,
+      "portraitHeight": 178,
+      "navigatorAlwaysVisible": false
+    },
+    "weapons": {
+      "profiles": {
+        "iron-verdict": {
+          "scale": 0.65,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 360,
+          "destructionRadiusPx": 28,
+          "muzzleScale": 1.2,
+          "sound": {
+            "shot": "/audio/library/desert-eagle/shot.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 360,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "twin-clause": {
+          "scale": 0.75,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 650,
+          "destructionRadiusPx": 38,
+          "muzzleScale": 1.6,
+          "sound": {
+            "shot": "/audio/library/remington/shot.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 650,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "rhein-9": {
+          "scale": 1,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 60,
+          "destructionRadiusPx": 28,
+          "muzzleScale": 1,
+          "sound": {
+            "shot": "/audio/library/mp40/shot.ogg",
+            "loop": "/audio/library/mp40/loop.ogg",
+            "stop": "/audio/library/mp40/stop.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 60,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "stack-10": {
+          "scale": 0.7,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 200,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 68,
+          "destructionRadiusPx": 28,
+          "muzzleScale": 0.8,
+          "sound": {
+            "shot": "/audio/library/uzi/shot.ogg",
+            "loop": "/audio/library/uzi/loop.ogg",
+            "stop": "/audio/library/uzi/stop.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 68,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "ak-256": {
+          "scale": 0.8,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": -20,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 102,
+          "destructionRadiusPx": 28,
+          "muzzleScale": 1.1,
+          "sound": {
+            "shot": "/audio/library/ak-47/shot.ogg",
+            "loop": "/audio/library/ak-47/loop.ogg",
+            "stop": "/audio/library/ak-47/stop.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 102,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "elastic-saw": {
+          "scale": 0.75,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 82,
+          "destructionRadiusPx": 28,
+          "muzzleScale": 1.1,
+          "sound": {
+            "shot": "/audio/library/lmg-762/shot.ogg",
+            "loop": "/audio/library/lmg-762/loop.ogg",
+            "stop": "/audio/library/lmg-762/stop.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 82,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "brrrt-10": {
+          "scale": 0.5,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "oscillate",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 200,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 3000,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "canisters",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 40,
+          "destructionRadiusPx": 42,
+          "muzzleScale": 1.5,
+          "sound": {
+            "shot": "/audio/library/a10-minigun/shot.ogg",
+            "loop": "/audio/library/a10-minigun/loop.ogg",
+            "stop": "/audio/library/a10-minigun/echo.ogg",
+            "stopDelayMs": 400,
+            "stopAfter": "shot",
+            "loopDelayMs": 10,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "attackMs": 12,
+            "releaseMs": 180,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "heavenfire-67": {
+          "scale": 0.5,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "oscillate",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 200,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 3000,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "missiles",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 550,
+          "destructionRadiusPx": 64,
+          "muzzleScale": 1.2,
+          "sound": {
+            "shot": "/audio/library/rpg/shot.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 550,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 8,
+            "gain": 0.65
+          }
+        },
+        "daz-ratatat": {
+          "scale": 1,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 200,
+          "sprayAngleDeg": 30,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.6,
+          "gloveGlowOnFire": true,
+          "effect": "keycaps",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 85,
+          "destructionRadiusPx": 28,
+          "muzzleScale": 0.65,
+          "sound": {
+            "shot": "/audio/library/keyboard/shot.ogg",
+            "loop": "/audio/library/keyboard/loop.ogg",
+            "stop": "/audio/library/keyboard/stop.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 85,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 8,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "merge-obliterator": {
+          "scale": 1,
+          "recoilScale": 1,
+          "barrelRecoilScale": 1,
+          "sprayRoll": true,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "plasma",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 480,
+          "destructionRadiusPx": 36,
+          "muzzleScale": 1.6,
+          "sound": {
+            "shot": "/audio/library/merge-obliterator/shot.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 180,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 70,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "auto-bmg": {
+          "scale": 1,
+          "recoilScale": 3,
+          "barrelRecoilScale": 1,
+          "sprayRoll": false,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 550,
+          "destructionRadiusPx": 48,
+          "muzzleScale": 3,
+          "sound": {
+            "shot": "/audio/library/bolt-rifle/shot.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 800,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "slopdisk": {
+          "scale": 1,
+          "recoilScale": 0.55,
+          "barrelRecoilScale": 1,
+          "sprayRoll": false,
+          "sprayMode": "inward",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -30,
+          "sprayMaxAngleDeg": 30,
+          "sprayPeriodMs": 500,
+          "sprayRecoilMultiplier": 0.3,
+          "gloveGlowOnFire": true,
+          "effect": "disks",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 110,
+          "destructionRadiusPx": 36,
+          "muzzleScale": 0.7,
+          "sound": {
+            "shot": "/audio/library/floppyslop/shot.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 110,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 24,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        },
+        "flaky-assertions": {
+          "scale": 0.68,
+          "recoilScale": 0.2,
+          "barrelRecoilScale": 3,
+          "sprayRoll": true,
+          "sprayMode": "oscillate",
+          "sprayDelayMs": 50,
+          "sprayTransitionMs": 1000,
+          "sprayAngleDeg": 90,
+          "sprayMinAngleDeg": -2,
+          "sprayMaxAngleDeg": 5,
+          "sprayPeriodMs": 2500,
+          "sprayRecoilMultiplier": 0.7,
+          "gloveGlowOnFire": true,
+          "effect": "ballistic",
+          "chargeMs": 1200,
+          "chargeSize": 3,
+          "fireIntervalMs": 290,
+          "destructionRadiusPx": 80,
+          "muzzleScale": 3,
+          "sound": {
+            "shot": "/audio/library/mk46/shot.ogg",
+            "loop": "/audio/library/mk46/loop.ogg",
+            "stop": "/audio/library/mk46/stop.ogg",
+            "stopDelayMs": 0,
+            "stopAfter": "loop",
+            "loopDelayMs": 290,
+            "loopStartSec": 0,
+            "loopEndSec": 0,
+            "releaseMs": 12,
+            "maxVoices": 6,
+            "gain": 1
+          }
+        }
+      },
+      "exposure": 0.72,
+      "lighting": {
+        "ambient": {
+          "skyColor": "#768bab",
+          "groundColor": "#1b2336",
+          "intensity": 0.22
+        },
+        "key": {
+          "color": "#9fbbdc",
+          "intensity": 2.77,
+          "azimuth": -45,
+          "elevation": 55
+        },
+        "fill": {
+          "color": "#c3a291",
+          "intensity": 4.19,
+          "azimuth": -110,
+          "elevation": 10
+        },
+        "rim": {
+          "color": "#93bfc9",
+          "intensity": 1.3,
+          "azimuth": 135,
+          "elevation": 25
+        },
+        "environmentIntensity": 0.28,
+        "environmentRotation": 117
+      }
+    },
+    "display": {
+      "wideMode": true,
+      "chromeGapPx": 16,
+      "chromeInsetPx": 24,
+      "findingsGutterPx": 64
+    },
+    "server": {
+      "maxFiles": 1000
+    }
+  },
+  "avatar": {
+    "framing": {
+      "offsetXPx": 1,
+      "offsetYPx": -1,
+      "zoom": 1.34
+    },
+    "quality": {
+      "renderScale": 2,
+      "fps": 45
+    },
+    "tilt": {
+      "pitch": 0.2,
+      "yaw": -8,
+      "roll": 8
+    },
+    "motion": {
+      "amount": 0.18,
+      "speed": 0.7,
+      "responseMs": 240
+    },
+    "effects": "normal",
+    "effectOverrides": {
+      "sparkle": 0.5,
+      "glowSize": 3.1,
+      "glare": 0.49,
+      "reflections": 0.47,
+      "glareSpeed": 0.14,
+      "wind": {
+        "x": -0.1,
+        "y": 0.1,
+        "z": 0
+      },
+      "fire": 0
+    },
+    "effectsEnabled": true,
+    "transitions": {
+      "intro": "breach",
+      "outro": "shutter-close",
+      "introMs": 720,
+      "outroMs": 420
+    }
+  },
+  "adlibs": {
+    "gapMs": 0,
+    "gain": 1,
+    "categories": [
+      {
+        "id": "mockery",
+        "name": "Mockery"
+      },
+      {
+        "id": "fun",
+        "name": "Fun"
+      },
+      {
+        "id": "gibberish",
+        "name": "Random gibberish"
+      },
+      {
+        "id": "motivation",
+        "name": "Motivation"
+      },
+      {
+        "id": "completion",
+        "name": "Completion"
+      },
+      {
+        "id": "review-banter",
+        "name": "Review banter"
+      },
+      {
+        "id": "review-overengineering",
+        "name": "Overengineering"
+      },
+      {
+        "id": "review-error-handling",
+        "name": "Error handling"
+      },
+      {
+        "id": "review-testing",
+        "name": "Testing"
+      },
+      {
+        "id": "review-type-checks",
+        "name": "Type checks"
+      },
+      {
+        "id": "review-diff-noise",
+        "name": "Diff noise"
+      },
+      {
+        "id": "review-comments",
+        "name": "Comments"
+      }
+    ],
+    "clips": [
+      {
+        "id": "mockdaddy-ship-it-baby",
+        "name": "Ship it baby!!",
+        "category": "completion",
+        "url": "/audio/adlibs/mockdaddy/ship-it-baby.ogg",
+        "enabled": true,
+        "durationSec": 1.802458,
+        "text": "Ship it baby!!",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-absolutely-wrong",
+        "name": "You're absolutely wroooong",
+        "category": "completion",
+        "url": "/audio/adlibs/mockdaddy/absolutely-wrong.ogg",
+        "enabled": true,
+        "durationSec": 3.239187,
+        "text": "You're absolutely wroooong",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-read-the-docs",
+        "name": "It didn't read the docs, did it?",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/read-the-docs.ogg",
+        "enabled": true,
+        "durationSec": 3.160833,
+        "text": "It didn't read the docs, did it?",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-changed-the-test",
+        "name": "The test failed, better change the test.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/changed-the-test.ogg",
+        "enabled": true,
+        "durationSec": 2.507771,
+        "text": "The test failed, better change the test.",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-six-hundred-formatted",
+        "name": "One line fixed. Six hundred formatted.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/six-hundred-formatted.ogg",
+        "enabled": true,
+        "durationSec": 7.079187,
+        "text": "One line fixed. Six hundred formatted. Is it covering its tracks?",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-one-character-bug",
+        "name": "Bug was one character. Four hundred lines changed.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/one-character-bug.ogg",
+        "enabled": true,
+        "durationSec": 6.609,
+        "text": "Bug was one character. Four hundred lines changed.",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-defensive-bunker",
+        "name": "Daz ist eine bunker!",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/defensive-bunker.ogg",
+        "enabled": true,
+        "durationSec": 4.205729,
+        "text": "That's not defensive programming!",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-coding-was-solved",
+        "name": "If coding was solved, why am I shooting at it?",
+        "category": "mockery",
+        "url": "/audio/adlibs/mockdaddy/coding-was-solved.ogg",
+        "enabled": true,
+        "durationSec": 3.552666,
+        "text": "If coding was solved, why am I shooting at it?",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-three-sixty-no-code",
+        "name": "Three-sixty No Code!!",
+        "category": "completion",
+        "url": "/audio/adlibs/mockdaddy/three-sixty-no-code.ogg",
+        "enabled": true,
+        "durationSec": 3.866125,
+        "text": "Three-sixty No Code!!",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-mock-reality",
+        "name": "Mocked reality.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/mock-reality.ogg",
+        "enabled": true,
+        "durationSec": 6.922458,
+        "text": "Mocked the database. Mocked the network... Mocked reality...",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-fallback-factory",
+        "name": "The fallback factory",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/fallback-factory.ogg",
+        "enabled": true,
+        "durationSec": 19.173896,
+        "text": "Here we see the agent in its natural habitat implementing a carefully designed fallback to the already existing catalog of fallbacks in the fallback factory stub implementation test harness. Notice how the original error remains completely untouched",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-sixty-ninth-helper",
+        "name": "That's the sixty-ninth helper!",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/sixty-ninth-helper.ogg",
+        "enabled": true,
+        "durationSec": 5.564083,
+        "text": "That's the sixty-ninth helper! AND ONCE AGAIN—IT DOESN'T HELP!",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-ship-the-error",
+        "name": "Catch the error. Ignore the error. Ship the error.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/ship-the-error.ogg",
+        "enabled": true,
+        "durationSec": 4.754292,
+        "text": "Catch the error. Ignore the error. Ship the error. Beautiful.",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-button-framework",
+        "name": "Asked for a button. Got a framework.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/button-framework.ogg",
+        "enabled": true,
+        "durationSec": 3.317563,
+        "text": "Asked for a button. Got a framework.",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-nice-error-handling",
+        "name": "Nice error handling.",
+        "category": "review-banter",
+        "url": "/audio/adlibs/mockdaddy/nice-error-handling.ogg",
+        "enabled": true,
+        "durationSec": 4.911021,
+        "text": "Nice error handling. Nobody'll ever know what killed us.",
+        "gain": 1
+      },
+      {
+        "id": "mockdaddy-tokens-go-brrrr",
+        "name": "Tokens go brrrr!",
+        "category": "completion",
+        "url": "/audio/adlibs/mockdaddy/tokens-go-brrrr.ogg",
+        "enabled": true,
+        "durationSec": 2.115937,
+        "text": "Tokens go brrrr!",
+        "gain": 1
+      }
+    ]
+  },
+  "playback": {
+    "clickCycle": true,
+    "durationMs": 0,
+    "policy": "queue",
+    "finishCycle": true
+  },
+  "events": {
+    "rules": [
+      {
+        "id": "destruction-start",
+        "name": "Entering destruction mode",
+        "enabled": true,
+        "events": [
+          "destruction-file-start",
+          "destruction-all-start"
+        ],
+        "weapons": [],
+        "voice": {
+          "category": "mockery"
+        },
+        "interrupt": false,
+        "incrementChance": 1,
+        "minCount": 1,
+        "maxCount": 1,
+        "cooldownMs": 10000
+      },
+      {
+        "id": "background-whip",
+        "name": "Background shooting",
+        "enabled": true,
+        "events": [
+          "color-unlock-cancel"
+        ],
+        "weapons": [],
+        "voice": {
+          "category": "mockery"
+        },
+        "interrupt": false,
+        "incrementChance": 0.5,
+        "minCount": 1,
+        "maxCount": 2,
+        "cooldownMs": 0
+      },
+      {
+        "id": "file-completion",
+        "name": "File completion voice",
+        "enabled": true,
+        "events": [
+          "file-complete"
+        ],
+        "weapons": [],
+        "voice": {
+          "category": "review-banter"
+        },
+        "hud": {
+          "expression": "Grin",
+          "finishCycle": true
+        },
+        "transmission": {
+          "title": "FILE CLEARED",
+          "text": "",
+          "expression": "ShadesPeek",
+          "splash": "signal"
+        },
+        "interrupt": true,
+        "incrementChance": 1,
+        "minCount": 1,
+        "maxCount": 2,
+        "cooldownMs": 0
+      },
+      {
+        "id": "color-unlock-start",
+        "name": "Color picker: challenge started",
+        "enabled": true,
+        "events": [
+          "color-unlock-start"
+        ],
+        "weapons": [],
+        "hud": {
+          "expression": "ShadesPeek",
+          "finishCycle": true
+        },
+        "interrupt": false,
+        "incrementChance": 1,
+        "minCount": 1,
+        "maxCount": 1,
+        "cooldownMs": 0
+      },
+      {
+        "id": "color-unlock-cancel",
+        "name": "Color picker: escaped",
+        "enabled": true,
+        "events": [
+          "color-unlock-cancel"
+        ],
+        "weapons": [],
+        "voice": {
+          "category": "mockery"
+        },
+        "hud": {
+          "expression": "Surprise",
+          "finishCycle": true
+        },
+        "interrupt": false,
+        "incrementChance": 1,
+        "minCount": 1,
+        "maxCount": 1,
+        "cooldownMs": 0
+      },
+      {
+        "id": "color-unlock-success",
+        "name": "Color picker: unlocked",
+        "enabled": true,
+        "events": [
+          "color-unlock-success"
+        ],
+        "weapons": [],
+        "voice": {
+          "category": "completion"
+        },
+        "hud": {
+          "expression": "Grin",
+          "finishCycle": true
+        },
+        "interrupt": false,
+        "incrementChance": 1,
+        "minCount": 1,
+        "maxCount": 1,
+        "cooldownMs": 0
+      }
+    ]
+  }
+}

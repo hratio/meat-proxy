@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "rootDirs": [".", "./.svelte-kit-dev/types", "./.svelte-kit/types"] },
+  "include": ["src/**/*.ts", "src/**/*.svelte", "dev/**/*.ts", "dev/**/*.svelte", "vite.config.ts", ".svelte-kit-dev/types/**/$types.d.ts", ".svelte-kit/types/**/$types.d.ts"]
+}
